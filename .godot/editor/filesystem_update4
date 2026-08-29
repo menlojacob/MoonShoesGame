@@ -1,6 +1,0 @@
-res://Scenes/game.tscn
-res://Scripts/game_manager.gd
-res://Scripts/coin.gd
-res://Scenes/title_screen.tscn
-res://Scenes/level_one.tscn
-res://Scripts/title_screen.gd
