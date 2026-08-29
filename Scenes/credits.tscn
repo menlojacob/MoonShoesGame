@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://3lpkp8i83d5u"]
+
+[ext_resource type="Script" uid="uid://dqmdqlxaqn4kh" path="res://Scripts/credits.gd" id="1_gryuy"]
+[ext_resource type="Texture2D" uid="uid://chidtq7doy1xh" path="res://Assets/sprites/moonshoes.png" id="2_gryuy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r18jl"]
+
+[node name="Credits" type="Node2D" unique_id=898418991]
+script = ExtResource("1_gryuy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=498845537]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1556628162]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -580.0
+offset_top = -330.0
+offset_right = 580.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.62352943, 0.2, 0.32156864, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=770511212]
+custom_minimum_size = Vector2(5000, 3000)
+layout_mode = 0
+offset_right = 2500.0
+offset_bottom = 1000.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_gryuy")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1819610424]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -50.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r18jl")
+horizontal_scroll_mode = 0
+
+[node name="Label" type="Label" parent="ScrollContainer" unique_id=448215844]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "A game by:
+Gus Smiley
+Jacob Abraham
+Joseph Kielb
+Oscar Leary-Malone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+and YOU!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=496517770]
+offset_left = -294.0
+offset_top = -200.0
+offset_right = 296.0
+offset_bottom = -63.0
+theme_override_colors/font_outline_color = Color(0.5686275, 0, 0.08627451, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 100
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=2092075570]
+offset_left = 460.0
+offset_top = 215.0
+offset_right = 566.0
+offset_bottom = 317.0
+text = "Back
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Moon Shoes!"
-run/main_scene="uid://bw3dyls111sxf"
+run/main_scene="uid://bqmq52lrw8x6m"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/sprites/icon.svg"
 
