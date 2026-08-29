@@ -1,0 +1,3 @@
+res://Scenes/game.tscn
+res://Scripts/game_manager.gd
+res://Scripts/coin.gd
