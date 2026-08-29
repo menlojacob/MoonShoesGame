@@ -1,17 +1,24 @@
 [gd_scene format=3 uid="uid://ea2et7dvhsvx"]
 
-[ext_resource type="Script" uid="uid://bm2hmdflpvs03" path="res://Scenes/version_notes.gd" id="1_7i78g"]
+[ext_resource type="Script" uid="uid://bm2hmdflpvs03" path="res://Scripts/version_notes.gd" id="1_7i78g"]
 
 [node name="VersionNotes" type="Node2D" unique_id=628406266]
 script = ExtResource("1_7i78g")
 
-[node name="VersionNotes" type="Label" parent="." unique_id=59596322]
-offset_left = 254.0
-offset_top = 96.0
-offset_right = 899.0
-offset_bottom = 145.0
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=136097273]
+offset_left = 378.0
+offset_top = 89.0
+offset_right = 638.0
+offset_bottom = 188.0
+
+[node name="VersionNotes" type="Label" parent="ScrollContainer" unique_id=59596322]
+layout_mode = 2
 text = "Version Notes:
-Added title screen, credits screen, version notes screen (placeholder), splash screen"
+Added: 
+- title screen
+- credits screen
+- version notes screen (placeholder)
+- splash screen"
 
 [node name="Button" type="Button" parent="." unique_id=1190429863]
 offset_left = 466.0
