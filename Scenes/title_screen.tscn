@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3hgxvujrecou" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://j1c3116xaowl" path="res://Assets/sprites/WPI_Logo.svg" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://dlytt1rbw4hkw" path="res://Assets/sprites/MoonShoesTitleScreen.png" id="3_4gxqj"]
 
 [sub_resource type="Animation" id="Animation_4gxqj"]
 length = 0.001
@@ -44,6 +45,7 @@ _data = {
 script = ExtResource("1_klylv")
 
 [node name="SplashScreen" type="Control" parent="." unique_id=1259285042]
+visible = false
 z_index = 5
 custom_maximum_size = Vector2(0, 0)
 layout_mode = 3
@@ -86,25 +88,30 @@ texture = ExtResource("2_p3fck")
 libraries/ = SubResource("AnimationLibrary_55kwv")
 autoplay = &"fade_out"
 
+[node name="Background" type="TextureRect" parent="." unique_id=1413196774]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_4gxqj")
+
 [node name="StartButton" type="Button" parent="." unique_id=705297284]
-offset_left = 180.0
-offset_top = 42.0
-offset_right = 226.0
-offset_bottom = 73.0
+offset_left = 253.0
+offset_top = 549.0
+offset_right = 355.0
+offset_bottom = 606.0
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="." unique_id=1501787144]
-offset_left = 443.0
-offset_top = 44.0
-offset_right = 506.0
-offset_bottom = 75.0
+offset_left = 499.0
+offset_top = 546.0
+offset_right = 596.0
+offset_bottom = 605.0
 text = "Credits"
 
 [node name="VersionButton" type="Button" parent="." unique_id=1066885358]
-offset_left = 176.0
-offset_top = 138.0
-offset_right = 293.0
-offset_bottom = 169.0
+offset_left = 695.0
+offset_top = 544.0
+offset_right = 848.0
+offset_bottom = 607.0
 text = "Version Notes"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
