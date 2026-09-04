@@ -29,6 +29,10 @@ GameManager="*uid://nmree8uj3s70"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Bouncy="A Body2D that the player character can bounce off of"
+
 [input]
 
 jump={

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dotny7mfn3i02"]
+
+[ext_resource type="PackedScene" uid="uid://c5pssivu8nmj5" path="res://Scenes/character.tscn" id="1_iti4p"]
+[ext_resource type="PackedScene" uid="uid://ccin4b1bjq5jp" path="res://Scenes/coin.tscn" id="2_dtjkg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v5frw"]
+
+[node name="TestLevel" type="Node2D" unique_id=531332276]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=610166585 groups=["Bouncy"]]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2012498461]
+shape = SubResource("WorldBoundaryShape2D_v5frw")
+
+[node name="Character" parent="." unique_id=1580066455 instance=ExtResource("1_iti4p")]
+position = Vector2(2, -7)
+
+[node name="Coin" parent="." unique_id=1084962330 instance=ExtResource("2_dtjkg")]
+position = Vector2(45, 32)

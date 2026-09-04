@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5pssivu8nmj5"]
+
+[ext_resource type="PackedScene" uid="uid://54ubxlkr8cgw" path="res://Scenes/character_controller.tscn" id="1_lkv7d"]
+[ext_resource type="Texture2D" uid="uid://c4ytggoijlj0e" path="res://Assets/sprites/character_placeholder.png" id="2_ushfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
+
+[node name="Character" type="CharacterBody2D" unique_id=1580066455]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536195149]
+shape = SubResource("RectangleShape2D_v5frw")
+
+[node name="CharacterController" parent="." unique_id=1441966244 instance=ExtResource("1_lkv7d")]
+
+[node name="CharacterPlaceholder" type="Sprite2D" parent="." unique_id=140620641]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_ushfy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2072228522]
+zoom = Vector2(4, 4)
