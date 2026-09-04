@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://3nsyb3e2c817"]
+
+[ext_resource type="Script" uid="uid://dkbwmehvt72xh" path="res://Scripts/level_select.gd" id="1_1fiak"]
+
+[node name="LevelSelect" type="Node2D" unique_id=2077009158]
+script = ExtResource("1_1fiak")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=704415350]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Levels" type="GridContainer" parent="." unique_id=792377916]
+custom_minimum_size = Vector2(0, 500)
+offset_left = 68.0
+offset_top = 112.0
+offset_right = 1084.0
+offset_bottom = 612.0
+columns = 5
+
+[node name="Level1" type="Button" parent="Levels" unique_id=946546900]
+custom_minimum_size = Vector2(200, 500)
+layout_mode = 2
+text = "Level 1"
+
+[node name="Level2" type="Button" parent="Levels" unique_id=1532997040]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="Levels" unique_id=2092259837]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+text = "Level 3"
+
+[node name="Level4" type="Button" parent="Levels" unique_id=1127409073]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Level 4"
+
+[node name="Level5" type="Button" parent="Levels" unique_id=1111525439]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Level 5"
+
+[connection signal="pressed" from="Levels/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Levels/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Levels/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Levels/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Levels/Level5" to="." method="_on_level_5_pressed"]
