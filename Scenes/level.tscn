@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bf8qkrcpf3v67"]
+
+[ext_resource type="Script" uid="uid://bd01u07ij8i13" path="res://Scripts/level.gd" id="1_6phgx"]
+[ext_resource type="PackedScene" uid="uid://dydanuoyb7w1j" path="res://Scenes/player.tscn" id="2_81xng"]
+[ext_resource type="PackedScene" uid="uid://cjy1fsl1khu4l" path="res://Scenes/killzone.tscn" id="3_wqkje"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1j4st"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fjak3"]
+
+[node name="Level" type="Node2D" unique_id=624581394]
+script = ExtResource("1_6phgx")
+
+[node name="Foreground" type="TileMapLayer" parent="." unique_id=1432229743]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=199152105]
+
+[node name="LevelComplete" type="Area2D" parent="." unique_id=270543521]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelComplete" unique_id=1143746891]
+position = Vector2(591, 0)
+shape = SubResource("WorldBoundaryShape2D_1j4st")
+
+[node name="Player" parent="." unique_id=136685190 instance=ExtResource("2_81xng")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1926023987]
+
+[node name="OutOfBounds" parent="." unique_id=1300452011 instance=ExtResource("3_wqkje")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutOfBounds" unique_id=1311702219]
+position = Vector2(223, 167)
+shape = SubResource("WorldBoundaryShape2D_fjak3")
+
+[connection signal="body_entered" from="LevelComplete" to="." method="_on_level_complete_body_entered"]
