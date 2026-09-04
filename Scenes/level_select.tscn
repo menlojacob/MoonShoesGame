@@ -48,8 +48,25 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Level 5"
 
+[node name="BackButton" type="Button" parent="." unique_id=445377003]
+offset_left = 20.0
+offset_top = 558.0
+offset_right = 84.0
+offset_bottom = 636.0
+text = "<- Back"
+
+[node name="Label" type="Label" parent="." unique_id=1586536978]
+offset_left = 403.0
+offset_top = 17.0
+offset_right = 742.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Level Select"
+
 [connection signal="pressed" from="Levels/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Levels/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Levels/Level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Levels/Level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Levels/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
