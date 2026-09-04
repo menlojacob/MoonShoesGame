@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://3nsyb3e2c817"]
 
 [ext_resource type="Script" uid="uid://dkbwmehvt72xh" path="res://Scripts/level_select.gd" id="1_1fiak"]
+[ext_resource type="PackedScene" uid="uid://bi4qoomt15hyv" path="res://Scenes/level_one.tscn" id="2_nkys2"]
 
 [node name="LevelSelect" type="Node2D" unique_id=2077009158]
 script = ExtResource("1_1fiak")
+level_one = ExtResource("2_nkys2")
+level_two = ExtResource("2_nkys2")
+level_three = ExtResource("2_nkys2")
+level_four = ExtResource("2_nkys2")
+level_five = ExtResource("2_nkys2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=704415350]
 offset_right = 1152.0
