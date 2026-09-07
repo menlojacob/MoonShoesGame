@@ -5,6 +5,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqlfn"]
+size = Vector2(10, 15)
+
 [node name="Character" type="CharacterBody2D" unique_id=1580066455]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536195149]
@@ -19,3 +22,10 @@ texture = ExtResource("2_ushfy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2072228522]
 zoom = Vector2(4, 4)
+
+[node name="EnemyCollision" type="Area2D" parent="." unique_id=75004720]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollision" unique_id=1802755176]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_sqlfn")

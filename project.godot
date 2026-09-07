@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Moon Shoes!"
-run/main_scene="uid://bqmq52lrw8x6m"
+run/main_scene="uid://dotny7mfn3i02"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/sprites/icon.svg"
 
@@ -31,7 +31,7 @@ window/stretch/aspect="expand"
 
 [global_group]
 
-Bouncy="A Body2D that the player character can bounce off of"
+EnemyCollision="Collision shapes part of this group will be considered for enemy collision"
 
 [input]
 

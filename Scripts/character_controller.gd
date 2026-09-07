@@ -4,7 +4,7 @@ const SPEED = 110.0
 const JUMP_VELOCITY = -300.0
 
 @onready var character = get_parent()
-@onready var collision = character.get_node("CollisionShape2D")
+@onready var collisionArea = character.get_node("EnemyCollision")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,20 +25,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
-	# we raycast downwards each frame to look for an enemy - if found, bounce
-	var spaceRid = character.get_world_2d().space
-	var spaceState = PhysicsServer2D.space_get_direct_state(spaceRid)
-	
-	var rayFrom = character.global_position
-	var rayTo = rayFrom + (Vector2.DOWN * ((collision.shape.size.y/2) + 1))
-	
-	var raycastParams = PhysicsRayQueryParameters2D.create(rayFrom, rayTo)
-	raycastParams.exclude = [character]
-	
-	var result = spaceState.intersect_ray(raycastParams)
-	
-	if !result.is_empty():
-		if result.collider.is_in_group("Bouncy"):
-			character.velocity.y = JUMP_VELOCITY
+	#run enemy bounce checks if we're moving downward
+	#We could connect to the area2d's body_entered signal for this, but that can be a bit inconsistent
+	#since body_entered won't continue to fire unless we exit the body and re-enter it again
+	var isMovingDownward = character.velocity.y > 0
+	if isMovingDownward:
+		var bodies = collisionArea.get_overlapping_bodies()
+		for body in bodies:
+			#skip our own character
+			if body == character:
+				continue
+			
+			if body.is_in_group("EnemyCollision"):
+				# bounce
+				character.velocity.y = JUMP_VELOCITY
+				
+				if body.has_method("jumped_on"):
+					body.jumped_on()
 
 	character.move_and_slide()
