@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://pkaf5wxnbtg8"]
+[gd_scene format=3 uid="uid://bf8qkrcpf3v67"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://bd01u07ij8i13" path="res://Scripts/level.gd" id="1_6phgx"]
 [ext_resource type="PackedScene" uid="uid://dydanuoyb7w1j" path="res://Scenes/player.tscn" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://cjy1fsl1khu4l" path="res://Scenes/killzone.tscn" id="3_wqkje"]
 
