@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://3nsyb3e2c817"]
+[gd_scene format=3 uid="uid://bxf2oaw7cax7s"]
 
-[ext_resource type="Script" uid="uid://dkbwmehvt72xh" path="res://Scripts/level_select.gd" id="1_1fiak"]
+[ext_resource type="Script" path="res://Scripts/level_select.gd" id="1_1fiak"]
 [ext_resource type="PackedScene" uid="uid://dotny7mfn3i02" path="res://Scenes/test_level.tscn" id="2_lx4vd"]
 [ext_resource type="PackedScene" uid="uid://bi4qoomt15hyv" path="res://Scenes/level_one.tscn" id="2_nkys2"]
 
