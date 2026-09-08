@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -300.0
 
 @onready var character = get_parent()
 @onready var collisionArea = character.get_node("EnemyCollision")
+@onready var lastSafePosition = character.global_position
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -42,5 +43,8 @@ func _physics_process(delta: float) -> void:
 				
 				if body.has_method("jumped_on"):
 					body.jumped_on()
-
+	
 	character.move_and_slide()
+
+func die():
+	character.global_position = lastSafePosition

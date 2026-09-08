@@ -2,8 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c5pssivu8nmj5" path="res://Scenes/character.tscn" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_dtjkg"]
+[ext_resource type="PackedScene" uid="uid://74agh6maar3i" path="res://Scenes/hurtbox.tscn" id="3_eglq2"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v5frw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nutg0"]
+size = Vector2(214, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
+size = Vector2(122, 20)
 
 [node name="TestLevel" type="Node2D" unique_id=531332276]
 
@@ -11,16 +16,27 @@
 position = Vector2(0, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2012498461]
-shape = SubResource("WorldBoundaryShape2D_v5frw")
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_nutg0")
+debug_color = Color(0.6045127, 0.5411462, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1905077683]
-offset_left = -145.0
-offset_top = -1.0
-offset_right = 149.0
-offset_bottom = 92.0
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=176691890]
+position = Vector2(299, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1159569386]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_nutg0")
+debug_color = Color(0.6045127, 0.5411462, 0, 1)
 
 [node name="Character" parent="." unique_id=1580066455 instance=ExtResource("1_iti4p")]
 position = Vector2(2, -7)
 
 [node name="TestEnemy" parent="." unique_id=1241326298 instance=ExtResource("2_dtjkg")]
 position = Vector2(69, 34)
+
+[node name="Hurtbox" parent="." unique_id=3302779 instance=ExtResource("3_eglq2")]
+position = Vector2(97, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=176445118]
+position = Vector2(51, 0)
+shape = SubResource("RectangleShape2D_v5frw")
