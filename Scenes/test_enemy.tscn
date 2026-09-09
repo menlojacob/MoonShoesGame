@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://cbb5sv8a356sc"]
 
 [ext_resource type="Script" uid="uid://bxoq3n1v46e5c" path="res://Scripts/test_enemy.gd" id="1_5b80j"]
-[ext_resource type="Texture2D" uid="uid://bfbht5mt0igby" path="res://Assets/sprites/icon.svg" id="1_r1vdb"]
+[ext_resource type="Texture2D" uid="uid://dg0q51osetw4h" path="res://Assets/sprites/FireflyEnemy.png" id="2_bs22l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b80j"]
+atlas = ExtResource("2_bs22l")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv0g2"]
+atlas = ExtResource("2_bs22l")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6qe4"]
+atlas = ExtResource("2_bs22l")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syt7t"]
+atlas = ExtResource("2_bs22l")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abggh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b80j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv0g2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6qe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syt7t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
 
@@ -9,9 +45,9 @@
 collision_layer = 2
 script = ExtResource("1_5b80j")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644464316]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=937030950]
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_r1vdb")
+sprite_frames = SubResource("SpriteFrames_abggh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537328302]
 shape = SubResource("RectangleShape2D_v5frw")
