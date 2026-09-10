@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqlfn"]
 size = Vector2(10, 15)
 
-[node name="Character" type="CharacterBody2D" unique_id=1580066455]
+[node name="Character" type="CharacterBody2D" unique_id=1580066455 groups=["PlayerCharacter"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536195149]

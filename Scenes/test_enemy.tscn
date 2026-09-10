@@ -41,6 +41,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqlfn"]
+
 [node name="TestEnemy" type="CharacterBody2D" unique_id=1241326298 groups=["EnemyCollision"]]
 collision_layer = 2
 script = ExtResource("1_5b80j")
@@ -51,3 +53,9 @@ sprite_frames = SubResource("SpriteFrames_abggh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537328302]
 shape = SubResource("RectangleShape2D_v5frw")
+
+[node name="EnemyKillbox" type="Area2D" parent="." unique_id=1785750342]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyKillbox" unique_id=395175693]
+shape = SubResource("RectangleShape2D_sqlfn")
