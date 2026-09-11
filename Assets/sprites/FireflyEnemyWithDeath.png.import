@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://src28dxs14ya"
-path="res://.godot/imported/WalkingAnimation.png-9af89a6fff9e3040553fa386519e9789.ctex"
+uid="uid://bx7ovol1t6bad"
+path="res://.godot/imported/FireflyEnemyWithDeath.png-501e8a4da5f60861d0e29368a448457d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/WalkingAnimation.png"
-dest_files=["res://.godot/imported/WalkingAnimation.png-9af89a6fff9e3040553fa386519e9789.ctex"]
+source_file="res://Assets/sprites/FireflyEnemyWithDeath.png"
+dest_files=["res://.godot/imported/FireflyEnemyWithDeath.png-501e8a4da5f60861d0e29368a448457d.ctex"]
 
 [params]
 

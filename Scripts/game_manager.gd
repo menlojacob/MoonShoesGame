@@ -6,6 +6,8 @@ var level_two_beat = false
 var level_three_beat = false
 var level_four_beat = false
 var level_five_beat = false
+# Checkpoint flag
+var respawn_point: Vector2
 
 
 # Called when the node enters the scene tree for the first time.
