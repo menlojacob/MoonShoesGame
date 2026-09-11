@@ -1,9 +1,14 @@
 extends Node2D
 @export var completion_flag: String
+@onready var player: CharacterBody2D = $Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GameManager.respawn_point = $SpawnPoint.global_position
+	var killzones: Array = $Killzones.get_children()
+	for i in killzones:
+		if i is Killzone:
+			i.respawn.connect(player.get_node("CharacterController").respawn)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
