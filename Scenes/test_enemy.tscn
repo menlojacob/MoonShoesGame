@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cbb5sv8a356sc"]
 
-[ext_resource type="Script" uid="uid://bxoq3n1v46e5c" path="res://Scripts/test_enemy.gd" id="1_5b80j"]
+[ext_resource type="PackedScene" uid="uid://b7uggetpie4x6" path="res://Scenes/enemy_controller.tscn" id="2_5b80j"]
 [ext_resource type="Texture2D" uid="uid://dg0q51osetw4h" path="res://Assets/sprites/FireflyEnemy.png" id="2_bs22l"]
+[ext_resource type="PackedScene" uid="uid://ih6lsvp4wk7i" path="res://Scenes/enemy_sprite.tscn" id="2_wv0g2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5b80j"]
 atlas = ExtResource("2_bs22l")
@@ -39,23 +42,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqlfn"]
-
 [node name="TestEnemy" type="CharacterBody2D" unique_id=1241326298 groups=["EnemyCollision"]]
 collision_layer = 2
-script = ExtResource("1_5b80j")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=937030950]
-scale = Vector2(0.15625, 0.15625)
-sprite_frames = SubResource("SpriteFrames_abggh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537328302]
 shape = SubResource("RectangleShape2D_v5frw")
 
-[node name="EnemyKillbox" type="Area2D" parent="." unique_id=1785750342]
-collision_mask = 2
+[node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("2_5b80j")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyKillbox" unique_id=395175693]
-shape = SubResource("RectangleShape2D_sqlfn")
+[node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_wv0g2")]
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_abggh")

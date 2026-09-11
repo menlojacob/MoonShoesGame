@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://bgmxh6j126jh7" path="res://Assets/sprites/world_tileset.png" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="3_eglq2"]
+[ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="4_rsyfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eglq2"]
 texture = ExtResource("2_dtjkg")
@@ -153,16 +154,40 @@ tile_set = SubResource("TileSet_btda1")
 [node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
 position = Vector2(535, 2)
 
-[node name="TestEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1241326298 instance=ExtResource("3_eglq2")]
+[node name="TestEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1241326298 instance=ExtResource("3_eglq2")]
+position = Vector2(-68, -9)
+
+[node name="MovementPath" parent="Enemies/TestEnemy5" index="3" unique_id=1052420983 instance=ExtResource("4_rsyfn")]
+speed = 25
+
+[node name="Node2D" type="Node2D" parent="Enemies/TestEnemy5/MovementPath" index="0" unique_id=628864083]
+position = Vector2(-38, -8)
+
+[node name="Node2D2" type="Node2D" parent="Enemies/TestEnemy5/MovementPath" index="1" unique_id=192837446]
+position = Vector2(-111, -8)
+
+[node name="TestEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=2090200793 instance=ExtResource("3_eglq2")]
+position = Vector2(-69, -55)
+
+[node name="MovementPath" parent="Enemies/TestEnemy6" index="3" unique_id=231383736 instance=ExtResource("4_rsyfn")]
+
+[node name="Node2D" type="Node2D" parent="Enemies/TestEnemy6/MovementPath" index="0" unique_id=473067775]
+position = Vector2(-37, -36)
+
+[node name="Node2D2" type="Node2D" parent="Enemies/TestEnemy6/MovementPath" index="1" unique_id=371241989]
+position = Vector2(-106, -36)
+
+[node name="Node2D3" type="Node2D" parent="Enemies/TestEnemy6/MovementPath" index="2" unique_id=1170358506]
+position = Vector2(-69, -91)
+
+[node name="TestEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=1343541702 instance=ExtResource("3_eglq2")]
 position = Vector2(55, 6)
 
-[node name="TestEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=1912849052 instance=ExtResource("3_eglq2")]
+[node name="TestEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=1912849052 instance=ExtResource("3_eglq2")]
 position = Vector2(350, 20)
 
-[node name="TestEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=873075259 instance=ExtResource("3_eglq2")]
+[node name="TestEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="4" unique_id=873075259 instance=ExtResource("3_eglq2")]
 position = Vector2(114, -22)
 
-[node name="TestEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=1559445465 instance=ExtResource("3_eglq2")]
+[node name="TestEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="5" unique_id=1559445465 instance=ExtResource("3_eglq2")]
 position = Vector2(172, -49)
-
-[connection signal="area_entered" from="LevelComplete" to="." method="_on_level_complete_body_entered"]

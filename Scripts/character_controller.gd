@@ -40,21 +40,22 @@ func _physics_process(delta: float) -> void:
 		#skip our own character
 		if body == character:
 			continue
-			
-		if body.is_in_group("EnemyCollision"):
+		
+		var enemyController = body.get_node_or_null("EnemyController")
+		if enemyController:
 			var isMovingDownward = character.velocity.y > 0
-			if isMovingDownward:
-				# bounce
-				character.velocity.y = JUMP_VELOCITY
-				
-				if body.has_method("jumped_on"):
-					body.jumped_on()
-				
-				lastJumpedOnEnemyId = body.get_instance_id()
-			else:
-				#moving upward and touching enemy, so get hurt
+			var isBelowEnemy = character.global_position.y > body.global_position.y
+			
+			if (not isMovingDownward) or (isBelowEnemy):
+				# get hit
 				if body.get_instance_id() != lastJumpedOnEnemyId:
 					die()
+			else:
+				if isMovingDownward:
+					# bounce
+					character.velocity.y = JUMP_VELOCITY
+					enemyController.jumped_on()
+					lastJumpedOnEnemyId = body.get_instance_id()
 	
 	character.move_and_slide()
 
