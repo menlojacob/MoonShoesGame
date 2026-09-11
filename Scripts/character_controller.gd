@@ -46,5 +46,6 @@ func _physics_process(delta: float) -> void:
 	
 	character.move_and_slide()
 
-func die():
-	character.global_position = lastSafePosition
+func respawn():
+	character.global_position = GameManager.respawn_point
+	character.get_node("CollisionShape2D").disabled = false

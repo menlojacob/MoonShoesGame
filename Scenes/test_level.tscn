@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://bgmxh6j126jh7" path="res://Assets/sprites/world_tileset.png" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="3_eglq2"]
+[ext_resource type="PackedScene" uid="uid://dpog14qsaty6n" path="res://Scenes/checkpoint.tscn" id="4_rsyfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eglq2"]
 texture = ExtResource("2_dtjkg")
@@ -142,11 +143,11 @@ sources/0 = SubResource("TileSetAtlasSource_eglq2")
 [node name="TestLevel" unique_id=624581394 instance=ExtResource("1_iti4p")]
 completion_flag = "level_one_beat"
 
-[node name="Foreground" parent="." index="0" unique_id=1432229743]
+[node name="Foreground2" type="TileMapLayer" parent="." index="1" unique_id=1989972453]
 tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAhAAAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_btda1")
 
-[node name="Foreground2" type="TileMapLayer" parent="." index="1" unique_id=1989972453]
+[node name="Foreground" parent="." index="2" unique_id=1432229743]
 tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAjAAEAAAAAAAAAAAAhAAAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_btda1")
 
@@ -165,4 +166,8 @@ position = Vector2(114, -22)
 [node name="TestEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=1559445465 instance=ExtResource("3_eglq2")]
 position = Vector2(172, -49)
 
-[connection signal="area_entered" from="LevelComplete" to="." method="_on_level_complete_body_entered"]
+[node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("4_rsyfn")]
+position = Vector2(184, 6)
+
+[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="1" unique_id=429890059 instance=ExtResource("4_rsyfn")]
+position = Vector2(401, 4)
