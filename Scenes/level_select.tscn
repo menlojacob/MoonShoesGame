@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://dkbwmehvt72xh" path="res://Scripts/level_select.gd" id="1_1fiak"]
 [ext_resource type="PackedScene" uid="uid://dotny7mfn3i02" path="res://Scenes/test_level.tscn" id="2_lx4vd"]
 [ext_resource type="PackedScene" uid="uid://bi4qoomt15hyv" path="res://Scenes/level_one_old.tscn" id="2_nkys2"]
+[ext_resource type="PackedScene" uid="uid://be55sgdd0baue" path="res://Scenes/level_one.tscn" id="3_2sqnl"]
 
 [node name="LevelSelect" type="Node2D" unique_id=2077009158]
 script = ExtResource("1_1fiak")
 level_one = ExtResource("2_lx4vd")
-level_two = ExtResource("2_nkys2")
+level_two = ExtResource("3_2sqnl")
 level_three = ExtResource("2_nkys2")
 level_four = ExtResource("2_nkys2")
 level_five = ExtResource("2_nkys2")

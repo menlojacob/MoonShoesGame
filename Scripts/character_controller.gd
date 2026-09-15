@@ -48,4 +48,4 @@ func _physics_process(delta: float) -> void:
 
 func respawn():
 	character.global_position = GameManager.respawn_point
-	character.get_node("CollisionShape2D").disabled = false
+	character.get_node("CollisionShape2D").set_deferred("disabled", false)

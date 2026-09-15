@@ -6,14 +6,21 @@
 script = ExtResource("1_7i78g")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=136097273]
-offset_left = 378.0
-offset_top = 89.0
-offset_right = 638.0
-offset_bottom = 188.0
+offset_left = 183.0
+offset_top = 39.0
+offset_right = 988.0
+offset_bottom = 467.0
 
 [node name="VersionNotes" type="Label" parent="ScrollContainer" unique_id=59596322]
 layout_mode = 2
 text = "Version Notes:
+Sprint 3
+Sprint 2
+Added: 
+- Character movement
+- Stationary enemy
+- Test level
+Sprint 1
 Added: 
 - title screen
 - credits screen
@@ -21,10 +28,10 @@ Added:
 - splash screen"
 
 [node name="Button" type="Button" parent="." unique_id=1190429863]
-offset_left = 466.0
-offset_top = 190.0
-offset_right = 511.0
-offset_bottom = 221.0
+offset_left = 648.0
+offset_top = 570.0
+offset_right = 693.0
+offset_bottom = 601.0
 text = "back"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
