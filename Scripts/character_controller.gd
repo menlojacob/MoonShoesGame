@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 			continue
 		
 		var enemyController = body.get_node_or_null("EnemyController")
-		if enemyController:
+		if enemyController and enemyController.is_alive():
 			var isMovingDownward = character.velocity.y > 0
 			var isBelowEnemy = character.global_position.y > body.global_position.y
 			
@@ -61,3 +61,5 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	character.global_position = lastSafePosition
+	
+	get_tree().call_group("EnemyController","respawn")
