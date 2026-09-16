@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_level_complete_body_entered(body: Node2D) -> void:
+func _on_level_complete_body_entered(_body: Node2D) -> void:
 	GameManager.set(completion_flag, true)
 	print("hello")
 	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")

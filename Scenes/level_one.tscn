@@ -1,0 +1,62 @@
+[gd_scene format=4 uid="uid://be55sgdd0baue"]
+
+[ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_lvfns"]
+[ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_sojq8"]
+[ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
+[ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
+
+[node name="Level" unique_id=624581394 instance=ExtResource("1_lvfns")]
+
+[node name="Foreground" parent="." index="1" unique_id=1432229743]
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAAPAP//AAAAAAAAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAAEAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD3/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAAQAP7/AAAAAAAAAAARAP7/AAAAAAAAAAASAP7/AAAAAAAAAAATAP7/AAAAAAAAAAAUAP7/AAAAAAAAAAASAP3/AAAAAAAAAAASAPz/AAAAAAAAAAASAPv/AAAAAAAAAAASAPr/AAAAAAAAAAASAPn/AAAAAAAAAAATAPn/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPr/AAAAAAAAAAAUAPv/AAAAAAAAAAAUAPz/AAAAAAAAAAATAPz/AAAAAAAAAAATAP3/AAAAAAAAAAAUAP3/AAAAAAAAAAATAPv/AAAAAAAAAAATAPr/AAAAAAAAAAAdAPn/AAAAAAAAAAAeAPn/AAAAAAAAAAAfAPn/AAAAAAAAAAAgAPn/AAAAAAAAAAAhAPn/AAAAAAAAAAAdAPr/AAAAAAAAAAAeAPr/AAAAAAAAAAAfAPr/AAAAAAAAAAAgAPr/AAAAAAAAAAAhAPr/AAAAAAAAAAAhAPv/AAAAAAAAAAAgAPv/AAAAAAAAAAAfAPv/AAAAAAAAAAAeAPv/AAAAAAAAAAAdAPv/AAAAAAAAAAAuAPn/AAAAAAAAAAAvAPn/AAAAAAAAAAAwAPn/AAAAAAAAAAAxAPn/AAAAAAAAAAAyAPn/AAAAAAAAAAAzAPn/AAAAAAAAAAA0APn/AAAAAAAAAAA0APr/AAAAAAAAAAAzAPr/AAAAAAAAAAAyAPr/AAAAAAAAAAAxAPr/AAAAAAAAAAAwAPr/AAAAAAAAAAAvAPr/AAAAAAAAAAAuAPr/AAAAAAAAAAAuAPv/AAAAAAAAAAAvAPv/AAAAAAAAAAAwAPv/AAAAAAAAAAAxAPv/AAAAAAAAAAAyAPv/AAAAAAAAAAAzAPv/AAAAAAAAAAA0APv/AAAAAAAAAABGAPj/AAAAAAAAAABGAPn/AAAAAAAAAABGAPr/AAAAAAAAAABGAPv/AAAAAAAAAABGAPz/AAAAAAAAAABGAP3/AAAAAAAAAABGAP7/AAAAAAAAAABHAPj/AAAAAAAAAABHAPn/AAAAAAAAAABHAPr/AAAAAAAAAABHAPv/AAAAAAAAAABHAPz/AAAAAAAAAABHAP3/AAAAAAAAAABHAP7/AAAAAAAAAABIAPj/AAAAAAAAAABIAPn/AAAAAAAAAABIAPr/AAAAAAAAAABIAPv/AAAAAAAAAABIAPz/AAAAAAAAAABIAP3/AAAAAAAAAABIAP7/AAAAAAAAAABJAPj/AAAAAAAAAABJAPn/AAAAAAAAAABJAPr/AAAAAAAAAABJAPv/AAAAAAAAAABJAPz/AAAAAAAAAABJAP3/AAAAAAAAAABJAP7/AAAAAAAAAABKAPj/AAAAAAAAAABKAPn/AAAAAAAAAABKAPr/AAAAAAAAAABKAPv/AAAAAAAAAABKAPz/AAAAAAAAAABKAP3/AAAAAAAAAABKAP7/AAAAAAAAAABFAPj/AAAAAAAAAABFAPn/AAAAAAAAAABFAPr/AAAAAAAAAABFAPv/AAAAAAAAAABFAPz/AAAAAAAAAABFAP3/AAAAAAAAAABFAP7/AAAAAAAAAAA=")
+
+[node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
+position = Vector2(1439, -68)
+
+[node name="Character" parent="." index="4" unique_id=1580066455]
+position = Vector2(0, 6)
+
+[node name="Platform" parent="." index="5" unique_id=1051613714 instance=ExtResource("5_tgw3l")]
+position = Vector2(429, -121)
+
+[node name="TestEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1241326298 instance=ExtResource("2_sojq8")]
+position = Vector2(263, -65)
+
+[node name="TestEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=543111438 instance=ExtResource("2_sojq8")]
+position = Vector2(365, -127)
+
+[node name="TestEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=1502292524 instance=ExtResource("2_sojq8")]
+position = Vector2(597, -132)
+
+[node name="TestEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=1890208935 instance=ExtResource("2_sojq8")]
+position = Vector2(664, -130)
+
+[node name="TestEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="4" unique_id=443123882 instance=ExtResource("2_sojq8")]
+position = Vector2(906, -127)
+
+[node name="TestEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="5" unique_id=1483903071 instance=ExtResource("2_sojq8")]
+position = Vector2(977, -92)
+
+[node name="TestEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="6" unique_id=1795745027 instance=ExtResource("2_sojq8")]
+position = Vector2(1055, -126)
+
+[node name="TestEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="7" unique_id=2090536131 instance=ExtResource("2_sojq8")]
+position = Vector2(1254, -65)
+
+[node name="TestEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="8" unique_id=547347798 instance=ExtResource("2_sojq8")]
+position = Vector2(1386, -111)
+
+[node name="TestEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="9" unique_id=1966438865 instance=ExtResource("2_sojq8")]
+position = Vector2(1325, -88)
+
+[node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("3_hi7j2")]
+position = Vector2(207, -42)
+
+[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="1" unique_id=237579521 instance=ExtResource("3_hi7j2")]
+position = Vector2(765, -122)
+
+[node name="Checkpoint3" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="2" unique_id=2081473975 instance=ExtResource("3_hi7j2")]
+position = Vector2(1142, -137)
+
+[node name="CollisionShape2D" parent="Killzones/OutOfBounds" parent_id_path=PackedInt32Array(1300452011) index="1" unique_id=1311702219]
+position = Vector2(0, 181)
