@@ -10,28 +10,30 @@ const JUMP_VELOCITY = -300.0
 
 var lastJumpedOnEnemyId = 0
 var jumping = false # for the jump animation so it doesnt get overwritten
+var movementLocked = 0 #if above 0, A and D keys will not influence horizontal movement
+var direction = null
+var isDoingAction = false #dashing, ground pounding, etc.
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not character.is_on_floor():
-		character.velocity += character.get_gravity() * delta
-	else:
-		jumping = false
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and character.is_on_floor():
-		character.velocity.y = JUMP_VELOCITY
-		jumping = true
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
+	if not isMovementLocked():
+		# Add the gravity.
+		if not character.is_on_floor():
+			character.velocity += character.get_gravity() * delta
+		else:
+			jumping = false
+
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and character.is_on_floor():
+			character.velocity.y = JUMP_VELOCITY
+			jumping = true
 		
-	# Apply direction
-	if direction:
-		character.velocity.x = direction * SPEED
-	else:
-		character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
+		direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			character.velocity.x = direction * SPEED
+		else:
+			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
 	if character.is_on_floor():
 		lastJumpedOnEnemyId = 0
@@ -69,7 +71,10 @@ func _physics_process(delta: float) -> void:
 					handle_animations(direction)
 					jumping = true
 					handle_animations(direction)
-					character.velocity.y = JUMP_VELOCITY
+					
+					if not isMovementLocked():
+						character.velocity.y = JUMP_VELOCITY
+					
 					enemyController.jumped_on()
 					lastJumpedOnEnemyId = body.get_instance_id()
 	
@@ -80,6 +85,24 @@ func respawn():
 	character.get_node("CollisionShape2D").set_deferred("disabled", false)
 	get_tree().call_group("EnemyController","respawn")
 	
+func isMovementLocked():
+	return movementLocked > 0
+	
+func lockMovement():
+	movementLocked += 1
+	
+func unlockMovement():
+	movementLocked -= 1
+
+func getDirection():
+	return direction
+
+func getDoingAction():
+	return isDoingAction
+	
+func setDoingAction(doingAction):
+	isDoingAction = doingAction
+
 func handle_animations(direction):
 	if !jumping:
 		if direction != 0:
