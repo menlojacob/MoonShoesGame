@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_lvfns"]
 [ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_sojq8"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
+[ext_resource type="Texture2D" uid="uid://bqarv868pvpbn" path="res://Assets/sprites/LevelBackground.png" id="5_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
 
 [node name="Level" unique_id=624581394 instance=ExtResource("1_lvfns")]
@@ -15,6 +16,16 @@ position = Vector2(1439, -68)
 
 [node name="Character" parent="." index="4" unique_id=1580066455]
 position = Vector2(0, 6)
+
+[node name="BackgroundImage" type="TextureRect" parent="Character/Camera2D2" parent_id_path=PackedInt32Array(1926023987) index="0" unique_id=1184354376]
+z_index = -10
+offset_left = -144.0
+offset_top = -81.0
+offset_right = 144.0
+offset_bottom = 124.0
+texture = ExtResource("5_b7vm3")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Platform" parent="." index="5" unique_id=1051613714 instance=ExtResource("5_tgw3l")]
 position = Vector2(429, -121)

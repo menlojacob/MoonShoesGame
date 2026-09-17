@@ -15,8 +15,10 @@ func playDamageAnimation():
 	self.modulate = Color(1,1,1)
 
 func playDeathAnimation():
-	await playDamageAnimation()
+	self.play("death")
+	await self.animation_finished
 	self.visible = false
 	
 func onRespawn():
 	self.visible = true
+	self.play("idle")
