@@ -17,6 +17,7 @@ text = "Version Notes:
 Sprint 3
 - Level 1 tutorial section
 - Checkpoints
+- Enemies die when jumped on, and respawn when the player dies
 Sprint 2
 Added: 
 - Character movement
