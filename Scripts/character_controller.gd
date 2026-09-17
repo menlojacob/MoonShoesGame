@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 			if (not isMovingDownward) or (isBelowEnemy):
 				# get hit
 				if body.get_instance_id() != lastJumpedOnEnemyId:
-					die()
+					respawn()
 			else:
 				if isMovingDownward:
 					# bounce
