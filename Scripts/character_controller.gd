@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -300.0
 @onready var collisionArea = character.get_node("EnemyCollision")
 @onready var lastSafePosition = character.global_position
 
+var lastJumpedOnEnemyId = 0
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not character.is_on_floor():
@@ -26,26 +28,38 @@ func _physics_process(delta: float) -> void:
 	else:
 		character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
+	if character.is_on_floor():
+		lastJumpedOnEnemyId = 0
+		
 	#run enemy bounce checks if we're moving downward
 	#We could connect to the area2d's body_entered signal for this, but that can be a bit inconsistent
 	#since body_entered won't continue to fire unless we exit the body and re-enter it again
-	var isMovingDownward = character.velocity.y > 0
-	if isMovingDownward:
-		var bodies = collisionArea.get_overlapping_bodies()
-		for body in bodies:
-			#skip our own character
-			if body == character:
-				continue
+	
+	var bodies = collisionArea.get_overlapping_bodies()
+	for body in bodies:
+		#skip our own character
+		if body == character:
+			continue
+		
+		var enemyController = body.get_node_or_null("EnemyController")
+		if enemyController and enemyController.is_alive():
+			var isMovingDownward = character.velocity.y > 0
+			var isBelowEnemy = character.global_position.y > body.global_position.y
 			
-			if body.is_in_group("EnemyCollision"):
-				# bounce
-				character.velocity.y = JUMP_VELOCITY
-				
-				if body.has_method("jumped_on"):
-					body.jumped_on()
+			if (not isMovingDownward) or (isBelowEnemy):
+				# get hit
+				if body.get_instance_id() != lastJumpedOnEnemyId:
+					die()
+			else:
+				if isMovingDownward:
+					# bounce
+					character.velocity.y = JUMP_VELOCITY
+					enemyController.jumped_on()
+					lastJumpedOnEnemyId = body.get_instance_id()
 	
 	character.move_and_slide()
 
 func respawn():
 	character.global_position = GameManager.respawn_point
 	character.get_node("CollisionShape2D").set_deferred("disabled", false)
+	get_tree().call_group("EnemyController","respawn")
