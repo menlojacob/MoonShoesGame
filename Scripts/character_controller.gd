@@ -2,6 +2,7 @@ extends Node
 
 const SPEED = 110.0
 const JUMP_VELOCITY = -300.0
+const JUMP_CANCEL_FACTOR = 0.5 #when you do a short jump, it's JUMP_VELOCITY * JUMP_CANCEL_FACTOR
 
 @onready var character = get_parent()
 @onready var collisionArea = character.get_node("EnemyCollision")
@@ -12,7 +13,14 @@ var lastJumpedOnEnemyId = 0
 var jumping = false # for the jump animation so it doesnt get overwritten
 var movementLocked = 0 #if above 0, A and D keys will not influence horizontal movement
 var direction = null
+var lastValidDirection = 1
 var isDoingAction = false #dashing, ground pounding, etc.
+var jumpReleased = false
+
+func jump():
+	character.velocity.y = JUMP_VELOCITY
+	jumping = true
+	jumpReleased = false
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -21,22 +29,21 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not character.is_on_floor():
 			character.velocity += character.get_gravity() * delta
-		else:
-			jumping = false
 
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and character.is_on_floor():
-			character.velocity.y = JUMP_VELOCITY
-			jumping = true
+			jump()
 		
 		direction = Input.get_axis("move_left", "move_right")
 		if direction:
 			character.velocity.x = direction * SPEED
+			lastValidDirection = direction
 		else:
 			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
 	if character.is_on_floor():
 		lastJumpedOnEnemyId = 0
+		jumping = false
 		
 	handle_animations(direction)
 	
@@ -73,10 +80,15 @@ func _physics_process(delta: float) -> void:
 					handle_animations(direction)
 					
 					if not isMovementLocked():
-						character.velocity.y = JUMP_VELOCITY
+						jump()
 					
 					enemyController.jumped_on()
 					lastJumpedOnEnemyId = body.get_instance_id()
+	
+	if (not Input.is_action_pressed("jump")) and (character.velocity.y > -275) and (character.velocity.y < 0) and (not jumpReleased):
+		print(character.velocity.y)
+		jumpReleased = true
+		character.velocity.y *= JUMP_CANCEL_FACTOR
 	
 	character.move_and_slide()
 
@@ -96,6 +108,9 @@ func unlockMovement():
 
 func getDirection():
 	return direction
+	
+func getLastValidDirection():
+	return lastValidDirection
 
 func getDoingAction():
 	return isDoingAction

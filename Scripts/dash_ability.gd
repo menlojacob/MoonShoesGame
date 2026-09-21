@@ -12,7 +12,7 @@ var touchedGround = true
 
 func dash(initialDelta):
 	currentDashTime = initialDelta
-	currentDashDirection = characterController.getDirection()
+	currentDashDirection = characterController.getLastValidDirection()
 	characterController.lockMovement()
 	characterController.setDoingAction(true)
 	
