@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://ba8wuqb1lgp1c"]
+
+[ext_resource type="PackedScene" uid="uid://b7uggetpie4x6" path="res://Scenes/enemy_controller.tscn" id="1_4u3x4"]
+[ext_resource type="PackedScene" uid="uid://ih6lsvp4wk7i" path="res://Scenes/enemy_sprite.tscn" id="2_3b5b1"]
+[ext_resource type="Texture2D" uid="uid://bx7ovol1t6bad" path="res://Assets/sprites/FireflyEnemyWithDeath.png" id="3_i657n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aypci"]
+size = Vector2(104, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yq26"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03ucf"]
+atlas = ExtResource("3_i657n")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejq7j"]
+atlas = ExtResource("3_i657n")
+region = Rect2(480, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq251"]
+atlas = ExtResource("3_i657n")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivgue"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sywfw"]
+atlas = ExtResource("3_i657n")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reeca"]
+atlas = ExtResource("3_i657n")
+region = Rect2(480, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvom0"]
+atlas = ExtResource("3_i657n")
+region = Rect2(0, 480, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wquui"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 480, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7if0"]
+atlas = ExtResource("3_i657n")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpec1"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_envfy"]
+atlas = ExtResource("3_i657n")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty032"]
+atlas = ExtResource("3_i657n")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blori"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yq26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03ucf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejq7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq251")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivgue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sywfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reeca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvom0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wquui")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7if0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpec1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_envfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty032")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[node name="FireflyEnemy" type="AnimatedSprite2D" unique_id=2078234531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118362947]
+position = Vector2(3, 4.5)
+shape = SubResource("RectangleShape2D_aypci")
+
+[node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("1_4u3x4")]
+
+[node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_3b5b1")]
+sprite_frames = SubResource("SpriteFrames_blori")
+animation = &"death"
+autoplay = "idle"
+frame = 8
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnemySprite" unique_id=1640791244]
