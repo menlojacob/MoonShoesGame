@@ -6,7 +6,6 @@ var DASH_TIME = 0.25
 var currentDashTime = 0.0
 var currentDashDirection = 0
 var touchedGround = true
-var touchedEnemyConnection
 
 @onready var character = self.get_parent()
 @onready var characterController = character.get_node_or_null("CharacterController")

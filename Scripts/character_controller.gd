@@ -18,25 +18,30 @@ var lastValidDirection = 1
 var isDoingAction = false #dashing, ground pounding, etc.
 var jumpReleased = false
 var invulnerable = 0
+var horizontalSpeedModifier = 1
+var gravityModifier = 1
 
 signal touchedEnemy
 signal jumpedOnEnemy
 
-func jump(extraHeight = 0):
+func jump(height = JUMP_HEIGHT, variableHeight = true):
 	#calculate force needed to reach height
-	var impulse = -sqrt(2 * character.get_gravity().y * (JUMP_HEIGHT + extraHeight))
+	var gravity = (character.get_gravity().y * gravityModifier)
+	var impulse = -sqrt(2 * gravity * height)
 	character.velocity.y = impulse
 	jumping = true
-	jumpReleased = false
+	jumpReleased = not variableHeight
 
 func jumpOffEnemy(enemyBody, enemyController):
-	#try to get the enemy's collision shape and put our character at the top of it
-	var extraHeight = 0
+	#we try to make the player bounce to the same height every time
+	#regardless of initial height when they hit the enemy.
+	var bounceHeight = JUMP_HEIGHT
 	var enemyCollisionShape = enemyBody.get_node_or_null("CollisionShape2D")
 	if enemyCollisionShape:
 		var topOfEnemyHeight = enemyBody.global_position.y - (enemyCollisionShape.shape.size.y/2)
 		var bottomOfPlayerHeight = character.global_position.y + (characterCollision.shape.size.y/2)
-		extraHeight = bottomOfPlayerHeight - topOfEnemyHeight
+		var difference = bottomOfPlayerHeight - topOfEnemyHeight
+		bounceHeight += difference
 	
 	jumping = false # reset the jump animation
 	handle_animations(direction)
@@ -44,8 +49,7 @@ func jumpOffEnemy(enemyBody, enemyController):
 	handle_animations(direction)
 					
 	if not isMovementLocked():
-		jump(extraHeight)
-		jumpReleased = true #makes the jump not affected by holding space or not
+		jump(bounceHeight, false)
 					
 	enemyController.jumped_on()
 	lastJumpedOnEnemyId = enemyBody.get_instance_id()
@@ -57,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	if not isMovementLocked():
 		# Add the gravity.
 		if not character.is_on_floor():
-			character.velocity += character.get_gravity() * delta
+			character.velocity += character.get_gravity() * gravityModifier * delta
 
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and character.is_on_floor():
@@ -65,7 +69,7 @@ func _physics_process(delta: float) -> void:
 		
 		direction = Input.get_axis("move_left", "move_right")
 		if direction:
-			character.velocity.x = direction * SPEED
+			character.velocity.x = direction * SPEED * horizontalSpeedModifier
 			lastValidDirection = direction
 		else:
 			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
@@ -147,6 +151,12 @@ func setInvulnerable(isInvulnerable : bool):
 		
 func isInvulnerable():
 	return invulnerable > 0
+
+func setHorizontalSpeedModifier(modifier):
+	horizontalSpeedModifier = modifier
+	
+func setGravityModifier(modifier):
+	gravityModifier = modifier
 
 func handle_animations(direction):
 	if !jumping:
