@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://d3dtsdd3x4wyp"]
 
+[ext_resource type="Script" uid="uid://cnpq8sgky7gjm" path="res://Scripts/star_enemy.gd" id="1_2cm3o"]
 [ext_resource type="PackedScene" uid="uid://b7uggetpie4x6" path="res://Scenes/enemy_controller.tscn" id="1_yphsp"]
 [ext_resource type="PackedScene" uid="uid://ih6lsvp4wk7i" path="res://Scenes/enemy_sprite.tscn" id="2_foqnp"]
 [ext_resource type="Texture2D" uid="uid://8ovmgi2kbllf" path="res://Assets/sprites/StarEnemyFinal.png" id="3_foqnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8kw3"]
-size = Vector2(115, 117)
+size = Vector2(22, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cm3o"]
 atlas = ExtResource("3_foqnp")
@@ -250,16 +251,16 @@ animations = [{
 }]
 
 [node name="StarEnemy" type="CharacterBody2D" unique_id=29101376]
+collision_layer = 2
+script = ExtResource("1_2cm3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1733961518]
 z_index = 1
-position = Vector2(1.5, -0.5)
 shape = SubResource("RectangleShape2D_c8kw3")
 
 [node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("1_yphsp")]
 
 [node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_foqnp")]
-scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_2cm3o")
 animation = &"move"
 autoplay = "idle"

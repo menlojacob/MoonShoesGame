@@ -1,7 +1,7 @@
 extends Node
 
 @onready var enemy = get_parent()
-@onready var sprite = enemy.get_node_or_null("Sprite2D")
+@onready var sprite = enemy.get_node_or_null("AnimatedSprite2D")
 
 #enemy variables
 @export var maxHealth = 1
