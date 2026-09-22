@@ -14,7 +14,7 @@ func dash(initialDelta):
 	currentDashTime = initialDelta
 	currentDashDirection = characterController.getLastValidDirection()
 	characterController.lockMovement()
-	characterController.setDoingAction(true)
+	characterController.setBusy(true)
 	characterController.setInvulnerable(true)
 	characterController.touchedEnemy.connect(dashJump)
 	
@@ -24,7 +24,7 @@ func stopDash():
 	currentDashTime = 0.0
 	currentDashDirection = 0
 	characterController.unlockMovement()
-	characterController.setDoingAction(false)
+	characterController.setBusy(false)
 	characterController.setInvulnerable(false)
 	characterController.touchedEnemy.disconnect(dashJump)
 
@@ -38,7 +38,7 @@ func _ready():
 	)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("Dash") and not characterController.getDoingAction() and touchedGround:
+	if Input.is_action_just_pressed("Dash") and (not characterController.isBusy()) and touchedGround and currentDashTime == 0.0:
 		dash(delta)
 	
 	if currentDashTime > 0:

@@ -3,6 +3,7 @@ extends Node
 const SPEED = 110.0
 const JUMP_CANCEL_FACTOR = 0.5 #when you do a short jump, it's JUMP_VELOCITY * JUMP_CANCEL_FACTOR
 const JUMP_HEIGHT = 46
+const COYOTE_TIME = 0.15 * 1000 #0.15 seconds, the 1000 is for calculation reasons
 
 @onready var character = get_parent()
 @onready var collisionArea = character.get_node("EnemyCollision")
@@ -15,11 +16,12 @@ var jumping = false # for the jump animation so it doesnt get overwritten
 var movementLocked = 0 #if above 0, A and D keys will not influence horizontal movement
 var direction = null
 var lastValidDirection = 1
-var isDoingAction = false #dashing, ground pounding, etc.
+var busy = false #dashing, ground pounding, etc.
 var jumpReleased = false
 var invulnerable = 0
 var horizontalSpeedModifier = 1
 var gravityModifier = 1
+var lastOnGroundTime = 0
 
 signal touchedEnemy
 signal jumpedOnEnemy
@@ -31,6 +33,8 @@ func jump(height = JUMP_HEIGHT, variableHeight = true):
 	character.velocity.y = impulse
 	jumping = true
 	jumpReleased = not variableHeight
+	
+	play_jumping_animation()
 
 func jumpOffEnemy(enemyBody, enemyController):
 	#we try to make the player bounce to the same height every time
@@ -43,11 +47,6 @@ func jumpOffEnemy(enemyBody, enemyController):
 		var difference = bottomOfPlayerHeight - topOfEnemyHeight
 		bounceHeight += difference
 	
-	jumping = false # reset the jump animation
-	handle_animations(direction)
-	jumping = true
-	handle_animations(direction)
-					
 	if not isMovementLocked():
 		jump(bounceHeight, false)
 					
@@ -56,15 +55,20 @@ func jumpOffEnemy(enemyBody, enemyController):
 	jumpedOnEnemy.emit()
 
 func _physics_process(delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if character.is_on_floor():
+		lastJumpedOnEnemyId = 0
+		jumping = false
+		
+		var currentTime = Time.get_ticks_msec()
+		lastOnGroundTime = currentTime
+	
 	if not isMovementLocked():
 		# Add the gravity.
 		if not character.is_on_floor():
 			character.velocity += character.get_gravity() * gravityModifier * delta
 
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and character.is_on_floor():
+		if Input.is_action_just_pressed("jump") and isOnGround() and (not jumping):
 			jump()
 		
 		direction = Input.get_axis("move_left", "move_right")
@@ -73,10 +77,6 @@ func _physics_process(delta: float) -> void:
 			lastValidDirection = direction
 		else:
 			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
-		
-	if character.is_on_floor():
-		lastJumpedOnEnemyId = 0
-		jumping = false
 		
 	handle_animations(direction)
 	
@@ -137,11 +137,11 @@ func getDirection():
 func getLastValidDirection():
 	return lastValidDirection
 
-func getDoingAction():
-	return isDoingAction
+func isBusy():
+	return busy
 	
-func setDoingAction(doingAction):
-	isDoingAction = doingAction
+func setBusy(isBusy):
+	busy = isBusy
 
 func setInvulnerable(isInvulnerable : bool):
 	if isInvulnerable:
@@ -158,13 +158,15 @@ func setHorizontalSpeedModifier(modifier):
 func setGravityModifier(modifier):
 	gravityModifier = modifier
 
+func isOnGround():
+	return (Time.get_ticks_msec() - lastOnGroundTime) <= COYOTE_TIME
+
 func handle_animations(direction):
 	if !jumping:
 		if direction != 0:
 			sprite.play("walk")
 		else:
 			sprite.play("idle")
-	else:
-		sprite.play("jump")
-		await sprite.animation_finished
-		jumping = false
+
+func play_jumping_animation():
+	sprite.play("jump")
