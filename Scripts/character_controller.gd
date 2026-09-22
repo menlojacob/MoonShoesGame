@@ -9,7 +9,8 @@ const JUMP_VELOCITY = -300.0
 @onready var sprite: AnimatedSprite2D = $"../Sprite"
 
 var lastJumpedOnEnemyId = 0
-var jumping = false # for the jump animation so it doesnt get overwritten
+var jumping = false # for the jump animation so it doesnt get overwritten\
+var bouncing = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,11 +18,12 @@ func _physics_process(delta: float) -> void:
 		character.velocity += character.get_gravity() * delta
 	else:
 		jumping = false
+		bouncing = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and character.is_on_floor():
-		character.velocity.y = JUMP_VELOCITY
 		jumping = true
+		character.velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -66,8 +68,9 @@ func _physics_process(delta: float) -> void:
 				if isMovingDownward:
 					# bounce
 					jumping = false # reset the jump animation
+					bouncing = false # reset the jump animation
 					handle_animations(direction)
-					jumping = true
+					bouncing = true
 					handle_animations(direction)
 					character.velocity.y = JUMP_VELOCITY
 					enemyController.jumped_on()
@@ -81,12 +84,20 @@ func respawn():
 	get_tree().call_group("EnemyController","respawn")
 	
 func handle_animations(direction):
-	if !jumping:
+	if bouncing:
+		sprite.play("bounce")
+		await sprite.animation_finished
+		bouncing = false
+	elif jumping:
+		sprite.play("jump")
+		await sprite.animation_finished
+		jumping = false
+	else:
 		if direction != 0:
 			sprite.play("walk")
 		else:
 			sprite.play("idle")
-	else:
-		sprite.play("jump")
-		await sprite.animation_finished
-		jumping = false
+
+func die():
+	sprite.play("death")
+	await sprite.animation_finished
