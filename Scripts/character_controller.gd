@@ -1,13 +1,14 @@
 extends Node
 
 const SPEED = 110.0
-const JUMP_VELOCITY = -300.0
 const JUMP_CANCEL_FACTOR = 0.5 #when you do a short jump, it's JUMP_VELOCITY * JUMP_CANCEL_FACTOR
+const JUMP_HEIGHT = 46
 
 @onready var character = get_parent()
 @onready var collisionArea = character.get_node("EnemyCollision")
 @onready var lastSafePosition = character.global_position
-@onready var sprite: AnimatedSprite2D = $"../Sprite"
+@onready var sprite: AnimatedSprite2D = character.get_node("Sprite")
+@onready var characterCollision = character.get_node("CollisionShape2D")
 
 var lastJumpedOnEnemyId = 0
 var jumping = false # for the jump animation so it doesnt get overwritten
@@ -16,11 +17,39 @@ var direction = null
 var lastValidDirection = 1
 var isDoingAction = false #dashing, ground pounding, etc.
 var jumpReleased = false
+var invulnerable = 0
 
-func jump():
-	character.velocity.y = JUMP_VELOCITY
+signal touchedEnemy
+signal jumpedOnEnemy
+
+func jump(extraHeight = 0):
+	#calculate force needed to reach height
+	var impulse = -sqrt(2 * character.get_gravity().y * (JUMP_HEIGHT + extraHeight))
+	character.velocity.y = impulse
 	jumping = true
 	jumpReleased = false
+
+func jumpOffEnemy(enemyBody, enemyController):
+	#try to get the enemy's collision shape and put our character at the top of it
+	var extraHeight = 0
+	var enemyCollisionShape = enemyBody.get_node_or_null("CollisionShape2D")
+	if enemyCollisionShape:
+		var topOfEnemyHeight = enemyBody.global_position.y - (enemyCollisionShape.shape.size.y/2)
+		var bottomOfPlayerHeight = character.global_position.y + (characterCollision.shape.size.y/2)
+		extraHeight = bottomOfPlayerHeight - topOfEnemyHeight
+	
+	jumping = false # reset the jump animation
+	handle_animations(direction)
+	jumping = true
+	handle_animations(direction)
+					
+	if not isMovementLocked():
+		jump(extraHeight)
+		jumpReleased = true #makes the jump not affected by holding space or not
+					
+	enemyController.jumped_on()
+	lastJumpedOnEnemyId = enemyBody.get_instance_id()
+	jumpedOnEnemy.emit()
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -69,24 +98,16 @@ func _physics_process(delta: float) -> void:
 			
 			if (not isMovingDownward) or (isBelowEnemy):
 				# get hit
-				if body.get_instance_id() != lastJumpedOnEnemyId:
+				if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
 					respawn()
 			else:
 				if isMovingDownward:
 					# bounce
-					jumping = false # reset the jump animation
-					handle_animations(direction)
-					jumping = true
-					handle_animations(direction)
-					
-					if not isMovementLocked():
-						jump()
-					
-					enemyController.jumped_on()
-					lastJumpedOnEnemyId = body.get_instance_id()
+					jumpOffEnemy(body, enemyController)
+			
+			touchedEnemy.emit(body, enemyController)
 	
 	if (not Input.is_action_pressed("jump")) and (character.velocity.y > -275) and (character.velocity.y < 0) and (not jumpReleased):
-		print(character.velocity.y)
 		jumpReleased = true
 		character.velocity.y *= JUMP_CANCEL_FACTOR
 	
@@ -117,6 +138,15 @@ func getDoingAction():
 	
 func setDoingAction(doingAction):
 	isDoingAction = doingAction
+
+func setInvulnerable(isInvulnerable : bool):
+	if isInvulnerable:
+		invulnerable += 1
+	else:
+		invulnerable -= 1
+		
+func isInvulnerable():
+	return invulnerable > 0
 
 func handle_animations(direction):
 	if !jumping:
