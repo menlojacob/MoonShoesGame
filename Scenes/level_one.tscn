@@ -2880,7 +2880,7 @@ position = Vector2(3381, -388)
 position = Vector2(3430, -396)
 
 [node name="TestEnemy13" parent="." index="21" unique_id=563284553 instance=ExtResource("2_sojq8")]
-position = Vector2(3403, -423)
+position = Vector2(3402, -430)
 
 [node name="TestEnemy14" parent="." index="22" unique_id=1461815876 instance=ExtResource("2_sojq8")]
 position = Vector2(3300, -415)
