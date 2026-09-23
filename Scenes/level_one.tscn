@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://be55sgdd0baue"]
 
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_lvfns"]
+[ext_resource type="Texture2D" uid="uid://cydd3rwwlu324" path="res://Assets/sprites/TileSet.png" id="2_gni6d"]
+[ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_sojq8"]
 [ext_resource type="Texture2D" uid="uid://b6j8hage2autb" path="res://Assets/sprites/Level1Background.png" id="2_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
+[ext_resource type="Texture2D" uid="uid://bqarv868pvpbn" path="res://Assets/sprites/LevelBackground.png" id="5_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://ba8wuqb1lgp1c" path="res://Scenes/firefly_enemy.tscn" id="4_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="5_3lrk7"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
