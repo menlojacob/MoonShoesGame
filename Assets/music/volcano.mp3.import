@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://cc1cfkygpnrhv"
+uid="uid://bqctsjxkm84ix"
 path="res://.godot/imported/volcano.mp3-7eca8aa10e4de2de8a278740b35bdf49.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/volcano.mp3-7eca8aa10e4de2de8a278740b35bdf49.
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=2.4
+bpm=0.0
 beat_count=0
 bar_beats=4

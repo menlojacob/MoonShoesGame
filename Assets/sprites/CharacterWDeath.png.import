@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3gfkfrl3a5lg"
-path="res://.godot/imported/LevelBackground.png-16e4aa9a5db65a51c00e106fa69ad9c1.ctex"
+uid="uid://dx03lgs0xyrou"
+path="res://.godot/imported/CharacterWDeath.png-1d86b22abdbaf4d044f5b6c16a10db15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/LevelBackground.png"
-dest_files=["res://.godot/imported/LevelBackground.png-16e4aa9a5db65a51c00e106fa69ad9c1.ctex"]
+source_file="res://Assets/sprites/CharacterWDeath.png"
+dest_files=["res://.godot/imported/CharacterWDeath.png-1d86b22abdbaf4d044f5b6c16a10db15.ctex"]
 
 [params]
 

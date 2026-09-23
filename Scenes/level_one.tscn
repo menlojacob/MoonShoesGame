@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://be55sgdd0baue"]
 
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_lvfns"]
-[ext_resource type="Texture2D" uid="uid://cydd3rwwlu324" path="res://Assets/sprites/TileSet.png" id="2_gni6d"]
-[ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_sojq8"]
+[ext_resource type="Texture2D" uid="uid://b6j8hage2autb" path="res://Assets/sprites/Level1Background.png" id="2_b7vm3"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
-[ext_resource type="Texture2D" uid="uid://bqarv868pvpbn" path="res://Assets/sprites/LevelBackground.png" id="5_b7vm3"]
+[ext_resource type="PackedScene" uid="uid://ba8wuqb1lgp1c" path="res://Scenes/firefly_enemy.tscn" id="4_b7vm3"]
+[ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="5_3lrk7"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3lrk7"]
 
@@ -2597,26 +2597,28 @@ metadata/_edit_lock_ = true
 
 [node name="BackgroundImage" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1184354376]
 z_index = -10
-offset_left = -144.0
+offset_left = -219.0
 offset_top = -81.0
-offset_right = 144.0
-offset_bottom = 124.0
-texture = ExtResource("5_b7vm3")
+offset_right = 218.0
+offset_bottom = 82.0
+texture = ExtResource("2_b7vm3")
 expand_mode = 1
-stretch_mode = 4
-metadata/_edit_lock_ = true
+stretch_mode = 5
 
-[node name="TestEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1241326298 instance=ExtResource("2_sojq8")]
-position = Vector2(263, -65)
+[node name="Platform" parent="." index="5" unique_id=1051613714 instance=ExtResource("5_tgw3l")]
+position = Vector2(429, -121)
 
-[node name="TestEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=543111438 instance=ExtResource("2_sojq8")]
-position = Vector2(365, -127)
+[node name="FireflyEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=2078234531 instance=ExtResource("4_b7vm3")]
+position = Vector2(267, -63)
 
-[node name="TestEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=1502292524 instance=ExtResource("2_sojq8")]
-position = Vector2(597, -132)
+[node name="FireflyEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=276235378 instance=ExtResource("4_b7vm3")]
+position = Vector2(582, -112)
 
-[node name="TestEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=1890208935 instance=ExtResource("2_sojq8")]
-position = Vector2(664, -130)
+[node name="FireflyEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=1593695653 instance=ExtResource("4_b7vm3")]
+position = Vector2(694, -111)
+
+[node name="StarEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=29101376 instance=ExtResource("5_3lrk7")]
+position = Vector2(372, -117)
 
 [node name="TestEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="4" unique_id=443123882 instance=ExtResource("2_sojq8")]
 position = Vector2(906, -127)
