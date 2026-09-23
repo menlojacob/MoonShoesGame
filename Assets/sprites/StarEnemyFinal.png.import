@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbcjyrynrpf6n"
-path="res://.godot/imported/Character.png-ae0ca649ab1a94e680d151a7e3e7c53d.ctex"
+uid="uid://8ovmgi2kbllf"
+path="res://.godot/imported/StarEnemyFinal.png-73dfc1dc121ea60bae3b890f50ec24f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Character.png"
-dest_files=["res://.godot/imported/Character.png-ae0ca649ab1a94e680d151a7e3e7c53d.ctex"]
+source_file="res://Assets/sprites/StarEnemyFinal.png"
+dest_files=["res://.godot/imported/StarEnemyFinal.png-73dfc1dc121ea60bae3b890f50ec24f8.ctex"]
 
 [params]
 
