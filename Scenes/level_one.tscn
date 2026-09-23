@@ -58,3 +58,69 @@ position = Vector2(1142, -137)
 
 [node name="CollisionShape2D" parent="Killzones/OutOfBounds" parent_id_path=PackedInt32Array(1300452011) index="1" unique_id=1311702219]
 position = Vector2(0, 181)
+
+[node name="Platform" parent="Platforms" parent_id_path=PackedInt32Array(349886321) index="0" unique_id=1051613714 instance=ExtResource("5_tgw3l")]
+position = Vector2(429, -121)
+
+[node name="Platform2" parent="Platforms" parent_id_path=PackedInt32Array(349886321) index="1" unique_id=1916444853 instance=ExtResource("5_tgw3l")]
+position = Vector2(1385, -150)
+
+[node name="Platform4" parent="Platforms" parent_id_path=PackedInt32Array(349886321) index="2" unique_id=975272567 instance=ExtResource("5_tgw3l")]
+position = Vector2(2913, -317)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform4" index="2" unique_id=1061607002]
+libraries/ = SubResource("AnimationLibrary_tgw3l")
+autoplay = &"movement"
+
+[node name="Platform3" parent="Platforms" parent_id_path=PackedInt32Array(349886321) index="3" unique_id=341380145 instance=ExtResource("5_tgw3l")]
+position = Vector2(1617, -252)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform3" index="2" unique_id=1520334530]
+root_node = NodePath("../../Platform3")
+libraries/ = SubResource("AnimationLibrary_ys0qe")
+autoplay = &"movement"
+
+[node name="TestEnemy" parent="." index="9" unique_id=1268108713 instance=ExtResource("2_sojq8")]
+position = Vector2(3171, -376)
+
+[node name="TestEnemy2" parent="." index="10" unique_id=1284241075 instance=ExtResource("2_sojq8")]
+position = Vector2(3214, -398)
+
+[node name="TestEnemy3" parent="." index="11" unique_id=809880127 instance=ExtResource("2_sojq8")]
+position = Vector2(3254, -421)
+
+[node name="TestEnemy4" parent="." index="12" unique_id=1423948099 instance=ExtResource("2_sojq8")]
+position = Vector2(3177, -426)
+
+[node name="TestEnemy5" parent="." index="13" unique_id=699373643 instance=ExtResource("2_sojq8")]
+position = Vector2(3262, -379)
+
+[node name="TestEnemy6" parent="." index="14" unique_id=137652627 instance=ExtResource("2_sojq8")]
+position = Vector2(3212, -358)
+
+[node name="TestEnemy7" parent="." index="15" unique_id=301846623 instance=ExtResource("2_sojq8")]
+position = Vector2(3303, -351)
+
+[node name="TestEnemy8" parent="." index="16" unique_id=549945768 instance=ExtResource("2_sojq8")]
+position = Vector2(3355, -347)
+
+[node name="TestEnemy9" parent="." index="17" unique_id=1471122628 instance=ExtResource("2_sojq8")]
+position = Vector2(3401, -355)
+
+[node name="TestEnemy10" parent="." index="18" unique_id=121737483 instance=ExtResource("2_sojq8")]
+position = Vector2(3326, -386)
+
+[node name="TestEnemy11" parent="." index="19" unique_id=1901195161 instance=ExtResource("2_sojq8")]
+position = Vector2(3381, -388)
+
+[node name="TestEnemy12" parent="." index="20" unique_id=1365311684 instance=ExtResource("2_sojq8")]
+position = Vector2(3430, -396)
+
+[node name="TestEnemy13" parent="." index="21" unique_id=563284553 instance=ExtResource("2_sojq8")]
+position = Vector2(3402, -430)
+
+[node name="TestEnemy14" parent="." index="22" unique_id=1461815876 instance=ExtResource("2_sojq8")]
+position = Vector2(3300, -415)
+
+[node name="TestEnemy15" parent="." index="23" unique_id=15804438 instance=ExtResource("2_sojq8")]
+position = Vector2(3465, -408)
