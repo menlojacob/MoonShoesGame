@@ -2865,7 +2865,7 @@ position = Vector2(2436, -330)
 position = Vector2(2948, -333)
 
 [node name="CollisionShape2D" parent="Killzones/OutOfBounds" parent_id_path=PackedInt32Array(1300452011) index="1" unique_id=1311702219]
-position = Vector2(0, 181)
+position = Vector2(2, 99)
 
 [node name="Platform4" parent="Platforms" parent_id_path=PackedInt32Array(879586082) index="0" unique_id=664860888 instance=ExtResource("5_tgw3l")]
 position = Vector2(2497, -316)
