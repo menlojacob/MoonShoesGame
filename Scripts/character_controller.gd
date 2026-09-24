@@ -111,6 +111,12 @@ func _physics_process(delta: float) -> void:
 					jumpOffEnemy(body, enemyController)
 			
 			touchedEnemy.emit(body, enemyController)
+	
+	if (not Input.is_action_pressed("jump")) and (character.velocity.y > -275) and (character.velocity.y < 0) and (not jumpReleased):
+		jumpReleased = true
+		character.velocity.y *= JUMP_CANCEL_FACTOR
+	
+	character.move_and_slide()
 
 func respawn():
 	character.global_position = GameManager.respawn_point
