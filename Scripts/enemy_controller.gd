@@ -5,6 +5,7 @@ extends Node
 
 #enemy variables
 @export var maxHealth = 1
+@export var spikyHelmet = false
 
 var health #becomes equal to maxhealth in _ready
 var alive = true
@@ -28,6 +29,11 @@ func jumped_on():
 	if health <= 0:
 		alive = false
 		died.emit()
+		
+		get_tree().create_timer(3).timeout.connect(func():
+			if not alive:
+				respawn()	
+		)
 	else:
 		on_jumped_on.emit()
 

@@ -23,6 +23,7 @@ var horizontalSpeedModifier = 1
 var gravityModifier = 1
 var lastOnGroundTime = 0
 var bouncing = false
+var enemyBounceHeightModifier = 1
 
 signal touchedEnemy
 signal jumpedOnEnemy
@@ -47,6 +48,8 @@ func jumpOffEnemy(enemyBody, enemyController):
 		var bottomOfPlayerHeight = character.global_position.y + (characterCollision.shape.size.y/2)
 		var difference = bottomOfPlayerHeight - topOfEnemyHeight
 		bounceHeight += difference
+	#add modifier (ground pound)
+	bounceHeight *= enemyBounceHeightModifier
 	
 	if not isMovementLocked():
 		jump(bounceHeight, false)
@@ -54,6 +57,8 @@ func jumpOffEnemy(enemyBody, enemyController):
 	enemyController.jumped_on()
 	lastJumpedOnEnemyId = enemyBody.get_instance_id()
 	jumpedOnEnemy.emit()
+	
+	play_bouncing_animation()
 
 func _physics_process(delta: float) -> void:
 	if character.is_on_floor():
@@ -101,7 +106,7 @@ func _physics_process(delta: float) -> void:
 			var isMovingDownward = character.velocity.y > 0
 			var isBelowEnemy = character.global_position.y > body.global_position.y
 			
-			if (not isMovingDownward) or (isBelowEnemy):
+			if ((not isMovingDownward) or (isBelowEnemy)) or enemyController.spikyHelmet:
 				# get hit
 				if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
 					respawn()
@@ -161,6 +166,9 @@ func setGravityModifier(modifier):
 
 func isOnGround():
 	return (Time.get_ticks_msec() - lastOnGroundTime) <= COYOTE_TIME
+
+func setEnemyBounceHeightModifier(modifier):
+	enemyBounceHeightModifier = modifier
 	
 func handle_animations(direction):
 	if !jumping:
@@ -171,6 +179,9 @@ func handle_animations(direction):
 
 func play_jumping_animation():
 	sprite.play("jump")
+
+func play_bouncing_animation():
+	sprite.play("bounce")
 
 func die():
 	sprite.play("death")
