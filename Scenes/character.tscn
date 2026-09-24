@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://54ubxlkr8cgw" path="res://Scenes/character_controller.tscn" id="1_lkv7d"]
 [ext_resource type="Texture2D" uid="uid://dx03lgs0xyrou" path="res://Assets/sprites/CharacterWDeath.png" id="1_ushfy"]
+[ext_resource type="Texture2D" uid="uid://cbcjyrynrpf6n" path="res://Assets/sprites/Character.png" id="1_ushfy"]
+[ext_resource type="PackedScene" uid="uid://n2ehclwjygdl" path="res://Scenes/dash_ability.tscn" id="3_owm7s"]
+[ext_resource type="PackedScene" uid="uid://cctp8kk5qdco8" path="res://Scenes/ground_pound_ability.tscn" id="4_nytcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ushfy"]
 atlas = ExtResource("1_ushfy")
@@ -329,7 +332,7 @@ collision_layer = 2
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2084453634]
 sprite_frames = SubResource("SpriteFrames_c8kw3")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 frame = 6
 frame_progress = 1.0
@@ -351,3 +354,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollision" unique_id=1802755176]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_sqlfn")
+
+[node name="DashAbility" parent="." unique_id=1300372267 instance=ExtResource("3_owm7s")]
+
+[node name="GroundPoundAbility" parent="." unique_id=37651454 instance=ExtResource("4_nytcm")]
