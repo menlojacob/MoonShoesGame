@@ -2592,7 +2592,7 @@ position = Vector2(3671, -100)
 [node name="Character" parent="." index="4" unique_id=1580066455]
 position = Vector2(-1, -9)
 
-[node name="Camera2D2" parent="Character" index="5" unique_id=1926023987]
+[node name="Camera2D2" parent="Character" index="7" unique_id=1926023987]
 metadata/_edit_lock_ = true
 
 [node name="BackgroundImage" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1184354376]
