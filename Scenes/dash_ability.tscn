@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://n2ehclwjygdl"]
-
-[ext_resource type="Script" uid="uid://bs1u2hee1qvm1" path="res://Scripts/dash_ability.gd" id="1_dgr63"]
-
-[node name="DashAbility" type="Node" unique_id=1300372267]
-script = ExtResource("1_dgr63")

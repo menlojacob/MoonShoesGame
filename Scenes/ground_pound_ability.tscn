@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cctp8kk5qdco8"]
-
-[ext_resource type="Script" uid="uid://cuug70w6oubyy" path="res://Scripts/ground_pound_ability.gd" id="1_sbv4p"]
-
-[node name="GroundPoundAbility" type="Node" unique_id=37651454]
-script = ExtResource("1_sbv4p")
