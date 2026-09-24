@@ -5,3 +5,4 @@ signal coin_collected
 func _on_body_entered(_body: Node2D) -> void:
 	coin_collected.emit()
 	animation_player.play("pickup")
+	print("hi")
