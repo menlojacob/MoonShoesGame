@@ -23,6 +23,7 @@ var horizontalSpeedModifier = 1
 var gravityModifier = 1
 var lastOnGroundTime = 0
 var bouncing = false
+var alive = true
 
 signal touchedEnemy
 signal jumpedOnEnemy
@@ -79,12 +80,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
-	handle_animations(direction)
-	
 	if direction == 1:
 		sprite.flip_h = true
 	elif direction == -1:
 		sprite.flip_h = false
+		
+	handle_animations(direction)
 		
 	#run enemy bounce checks if we're moving downward
 	#We could connect to the area2d's body_entered signal for this, but that can be a bit inconsistent
@@ -104,6 +105,7 @@ func _physics_process(delta: float) -> void:
 			if (not isMovingDownward) or (isBelowEnemy):
 				# get hit
 				if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
+					
 					respawn()
 			else:
 				if isMovingDownward:
@@ -116,12 +118,21 @@ func _physics_process(delta: float) -> void:
 		jumpReleased = true
 		character.velocity.y *= JUMP_CANCEL_FACTOR
 	
+	if !alive:
+		character.velocity *= 0
+	
 	character.move_and_slide()
 
 func respawn():
+	alive = false
+	sprite.play("death")
+	setInvulnerable(true)
+	await sprite.animation_finished
+	alive = true
 	character.global_position = GameManager.respawn_point
-	character.get_node("CollisionShape2D").set_deferred("disabled", false)
 	get_tree().call_group("EnemyController","respawn")
+	character.get_node("CollisionShape2D").set_deferred("disabled", false)
+	spawn()
 	
 func isMovementLocked():
 	return movementLocked > 0
@@ -163,15 +174,18 @@ func isOnGround():
 	return (Time.get_ticks_msec() - lastOnGroundTime) <= COYOTE_TIME
 	
 func handle_animations(direction):
-	if !jumping:
-		if direction != 0:
-			sprite.play("walk")
-		else:
-			sprite.play("idle")
+	if alive:
+		if !jumping:
+			if direction != 0:
+				sprite.play("walk")
+			else:
+				sprite.play("idle")
 
 func play_jumping_animation():
-	sprite.play("jump")
-
-func die():
-	sprite.play("death")
-	await sprite.animation_finished
+	if alive:
+		sprite.play("jump")
+		
+		
+func spawn():
+	await get_tree().create_timer(0.1).timeout
+	setInvulnerable(false)
