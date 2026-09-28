@@ -345,7 +345,7 @@ shape = SubResource("RectangleShape2D_v5frw")
 [node name="CharacterController" parent="." unique_id=1441966244 instance=ExtResource("1_lkv7d")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2072228522]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 
 [node name="EnemyCollision" type="Area2D" parent="." unique_id=75004720]
 collision_mask = 3
