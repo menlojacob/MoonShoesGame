@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ba8wuqb1lgp1c" path="res://Scenes/firefly_enemy.tscn" id="3_hwt33"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="4_7ycwu"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="4_8jpcs"]
+[ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="4_ye0dk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emxoy"]
 texture = ExtResource("2_ibwme")
@@ -263,11 +264,58 @@ position = Vector2(739, -135)
 [node name="FireflyEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="10" unique_id=277737219 instance=ExtResource("3_hwt33")]
 position = Vector2(813, -90)
 
+[node name="FireflyEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="11" unique_id=1425506157 instance=ExtResource("3_hwt33")]
+position = Vector2(985, -35)
+
+[node name="MovementPath" parent="Enemies/FireflyEnemy12" index="3" unique_id=1052420983 instance=ExtResource("4_ye0dk")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/FireflyEnemy12/MovementPath" index="0" unique_id=1812129171]
+position = Vector2(985, -35)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/FireflyEnemy12/MovementPath" index="1" unique_id=503466779]
+position = Vector2(1188, -35)
+
+[node name="FireflyEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="12" unique_id=1912411107 instance=ExtResource("3_hwt33")]
+position = Vector2(1047, -3)
+
+[node name="MovementPath" parent="Enemies/FireflyEnemy13" index="3" unique_id=932030241 instance=ExtResource("4_ye0dk")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/FireflyEnemy13/MovementPath" index="0" unique_id=1676914575]
+position = Vector2(985, -3)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/FireflyEnemy13/MovementPath" index="1" unique_id=97666579]
+position = Vector2(1188, -3)
+
+[node name="FireflyEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="13" unique_id=1438073759 instance=ExtResource("3_hwt33")]
+position = Vector2(1118, 29)
+
+[node name="MovementPath" parent="Enemies/FireflyEnemy14" index="3" unique_id=930663325 instance=ExtResource("4_ye0dk")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/FireflyEnemy14/MovementPath" index="0" unique_id=1298722289]
+position = Vector2(985, 29)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/FireflyEnemy14/MovementPath" index="1" unique_id=322514785]
+position = Vector2(1188, 29)
+
+[node name="FireflyEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="14" unique_id=1993083600 instance=ExtResource("3_hwt33")]
+position = Vector2(1188, 56)
+
+[node name="MovementPath" parent="Enemies/FireflyEnemy15" index="3" unique_id=2099648676 instance=ExtResource("4_ye0dk")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/FireflyEnemy15/MovementPath" index="0" unique_id=1257912253]
+position = Vector2(985, 56)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/FireflyEnemy15/MovementPath" index="1" unique_id=525145995]
+position = Vector2(1188, 56)
+
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("4_7ycwu")]
 position = Vector2(151, -68)
 
 [node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="1" unique_id=1479746438 instance=ExtResource("4_7ycwu")]
 position = Vector2(440, -302)
+
+[node name="Checkpoint3" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="2" unique_id=2052785498 instance=ExtResource("4_7ycwu")]
+position = Vector2(1279, -58)
 
 [node name="Platform" parent="Platforms" parent_id_path=PackedInt32Array(879586082) index="0" unique_id=1051613714 instance=ExtResource("4_8jpcs")]
 position = Vector2(152, -47)
