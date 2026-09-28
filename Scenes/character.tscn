@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c5pssivu8nmj5"]
 
+[ext_resource type="PackedScene" uid="uid://datrywsdmxar6" path="res://Scenes/player_camera.tscn" id="1_ejsiy"]
 [ext_resource type="PackedScene" uid="uid://54ubxlkr8cgw" path="res://Scenes/character_controller.tscn" id="1_lkv7d"]
 [ext_resource type="Texture2D" uid="uid://dx03lgs0xyrou" path="res://Assets/sprites/CharacterWDeath.png" id="1_ushfy"]
 [ext_resource type="PackedScene" uid="uid://cctp8kk5qdco8" path="res://Scenes/ground_pound_ability.tscn" id="3_nytcm"]
@@ -329,6 +330,8 @@ size = Vector2(10, 20)
 [node name="Character" type="CharacterBody2D" unique_id=1580066455 groups=["PlayerCharacter"]]
 collision_layer = 2
 
+[node name="PlayerCamera" parent="." unique_id=1600480580 instance=ExtResource("1_ejsiy")]
+
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2084453634]
 sprite_frames = SubResource("SpriteFrames_c8kw3")
 animation = &"death"
@@ -343,9 +346,6 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_v5frw")
 
 [node name="CharacterController" parent="." unique_id=1441966244 instance=ExtResource("1_lkv7d")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2072228522]
-zoom = Vector2(4, 4)
 
 [node name="EnemyCollision" type="Area2D" parent="." unique_id=75004720]
 collision_mask = 3

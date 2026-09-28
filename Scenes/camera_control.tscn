@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjaqlbi5dvxor"]
+
+[ext_resource type="Script" uid="uid://7djjqs6ykg70" path="res://Scripts/camera_control.gd" id="1_jsgnu"]
+
+[node name="CameraControl" type="Area2D" unique_id=2059448816]
+collision_mask = 2
+script = ExtResource("1_jsgnu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

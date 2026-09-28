@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3lrk7"]
+[ext_resource type="PackedScene" uid="uid://cjaqlbi5dvxor" path="res://Scenes/camera_control.tscn" id="8_y3aq0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lrk7"]
 texture = ExtResource("2_gni6d")
@@ -2578,6 +2579,9 @@ _data = {
 &"movement": SubResource("Animation_y3aq0")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5frw"]
+size = Vector2(20, 70)
+
 [node name="Level" unique_id=624581394 instance=ExtResource("1_lvfns")]
 
 [node name="Foreground" parent="." index="1" unique_id=1432229743]
@@ -2592,10 +2596,7 @@ position = Vector2(3671, -100)
 [node name="Character" parent="." index="4" unique_id=1580066455]
 position = Vector2(-1, -9)
 
-[node name="Camera2D2" parent="Character" index="7" unique_id=1926023987]
-metadata/_edit_lock_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1534769145]
+[node name="TextureRect" type="TextureRect" parent="Character" index="0" unique_id=1534769145]
 z_index = -10
 offset_left = -145.0
 offset_top = -82.0
@@ -2886,3 +2887,12 @@ position = Vector2(1617, -251)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform3" index="2" unique_id=1725852016]
 libraries/ = SubResource("AnimationLibrary_ys0qe")
 autoplay = &"movement"
+
+[node name="CameraControl" parent="." index="9" unique_id=2059448816 instance=ExtResource("8_y3aq0")]
+position = Vector2(45, 3)
+shiftX = 1
+zoom = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraControl" index="0" unique_id=1565319519]
+position = Vector2(10, -22)
+shape = SubResource("RectangleShape2D_v5frw")
