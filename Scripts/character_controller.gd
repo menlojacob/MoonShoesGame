@@ -182,7 +182,7 @@ func setEnemyBounceHeightModifier(modifier):
 	enemyBounceHeightModifier = modifier
 	
 func handle_animations(direction):
-	if alive:
+	if alive && not busy:
 		if !jumping:
 			if direction != 0:
 				sprite.play("walk")
@@ -193,6 +193,9 @@ func play_jumping_animation():
 	if alive:
 		sprite.play("jump")
 		
+func play_dash_animation():
+	if alive:
+		sprite.play("dash")
 		
 func spawn():
 	await get_tree().create_timer(0.1).timeout
@@ -200,7 +203,8 @@ func spawn():
 	sprite.play("jump")
 
 func play_bouncing_animation():
-	sprite.play("bounce")
+	if alive:
+		sprite.play("bounce")
 
 func die():
 	sprite.play("death")
