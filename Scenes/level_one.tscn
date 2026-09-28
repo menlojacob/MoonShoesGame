@@ -2647,16 +2647,16 @@ position = Vector2(1386, -111)
 position = Vector2(1325, -88)
 
 [node name="TestEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="11" unique_id=881402964 instance=ExtResource("2_sojq8")]
-position = Vector2(1375, -204)
+position = Vector2(1378, -210)
 
 [node name="TestEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="12" unique_id=329706261 instance=ExtResource("2_sojq8")]
-position = Vector2(1330, -249)
+position = Vector2(1324, -253)
 
 [node name="TestEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="13" unique_id=821016909 instance=ExtResource("2_sojq8")]
-position = Vector2(1386, -269)
+position = Vector2(1386, -276)
 
 [node name="TestEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="14" unique_id=440441841 instance=ExtResource("2_sojq8")]
-position = Vector2(1440, -280)
+position = Vector2(1445, -284)
 
 [node name="TestEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="15" unique_id=1846061058 instance=ExtResource("2_sojq8")]
 position = Vector2(1666, -111)
