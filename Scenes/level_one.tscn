@@ -2593,7 +2593,7 @@ position = Vector2(3671, -100)
 position = Vector2(-1, -9)
 
 [node name="Camera2D2" parent="Character" index="7" unique_id=1926023987]
-metadata/_edit_lock_ = true
+zoom = Vector2(3, 3)
 
 [node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1534769145]
 z_index = -10
