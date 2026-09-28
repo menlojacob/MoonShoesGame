@@ -2597,10 +2597,10 @@ zoom = Vector2(3, 3)
 
 [node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1534769145]
 z_index = -10
-offset_left = -145.0
-offset_top = -82.0
-offset_right = 145.0
-offset_bottom = 95.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 122.0
 texture = ExtResource("3_3lrk7")
 expand_mode = 1
 stretch_mode = 4
