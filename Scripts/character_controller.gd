@@ -96,28 +96,29 @@ func _physics_process(delta: float) -> void:
 	#We could connect to the area2d's body_entered signal for this, but that can be a bit inconsistent
 	#since body_entered won't continue to fire unless we exit the body and re-enter it again
 	
-	var bodies = collisionArea.get_overlapping_bodies()
-	for body in bodies:
-		#skip our own character
-		if body == character:
-			continue
+	if alive:
+		var bodies = collisionArea.get_overlapping_bodies()
+		for body in bodies:
+			#skip our own character
+			if body == character:
+				continue
 		
-		var enemyController = body.get_node_or_null("EnemyController")
-		if enemyController and enemyController.is_alive():
-			var isMovingDownward = character.velocity.y > 0
-			var isBelowEnemy = character.global_position.y > body.global_position.y
+			var enemyController = body.get_node_or_null("EnemyController")
+			if enemyController and enemyController.is_alive():
+				var isMovingDownward = character.velocity.y > 0
+				var isBelowEnemy = character.global_position.y > body.global_position.y
 			
-			if ((not isMovingDownward) or (isBelowEnemy)) or enemyController.spikyHelmet:
-				# get hit
-				if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
-					
-					respawn()
-			else:
-				if isMovingDownward:
-					# bounce
-					jumpOffEnemy(body, enemyController)
+				if ((not isMovingDownward) or (isBelowEnemy)) or enemyController.spikyHelmet:
+					# get hit
+					if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
+						
+						respawn()
+				else:
+					if isMovingDownward:
+						# bounce
+						jumpOffEnemy(body, enemyController)
 			
-			touchedEnemy.emit(body, enemyController)
+				touchedEnemy.emit(body, enemyController)
 	
 	if (not Input.is_action_pressed("jump")) and (character.velocity.y > -275) and (character.velocity.y < 0) and (not jumpReleased):
 		jumpReleased = true
