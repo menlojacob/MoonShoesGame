@@ -30,7 +30,7 @@ func jumped_on():
 		alive = false
 		died.emit()
 		
-		get_tree().create_timer(3).timeout.connect(func():
+		get_tree().create_timer(5).timeout.connect(func():
 			if not alive:
 				respawn()	
 		)
