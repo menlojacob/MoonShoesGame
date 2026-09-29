@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://00lwu82uasrn"]
+
+[ext_resource type="Script" uid="uid://t21idjkvpx3s" path="res://Scripts/lava.gd" id="1_mtm6w"]
+
+[node name="Lava" type="Area2D" unique_id=1381206230]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mtm6w")
