@@ -23,6 +23,8 @@ var horizontalSpeedModifier = 1
 var gravityModifier = 1
 var lastOnGroundTime = 0
 var bouncing = false
+var alive = true
+var enemyBounceHeightModifier = 1
 
 signal touchedEnemy
 signal jumpedOnEnemy
@@ -47,6 +49,8 @@ func jumpOffEnemy(enemyBody, enemyController):
 		var bottomOfPlayerHeight = character.global_position.y + (characterCollision.shape.size.y/2)
 		var difference = bottomOfPlayerHeight - topOfEnemyHeight
 		bounceHeight += difference
+	#add modifier (ground pound)
+	bounceHeight *= enemyBounceHeightModifier
 	
 	if not isMovementLocked():
 		jump(bounceHeight, false)
@@ -54,6 +58,8 @@ func jumpOffEnemy(enemyBody, enemyController):
 	enemyController.jumped_on()
 	lastJumpedOnEnemyId = enemyBody.get_instance_id()
 	jumpedOnEnemy.emit()
+	
+	play_bouncing_animation()
 
 func _physics_process(delta: float) -> void:
 	if character.is_on_floor():
@@ -79,12 +85,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			character.velocity.x = move_toward(character.velocity.x, 0, SPEED)
 		
-	handle_animations(direction)
-	
 	if direction == 1:
 		sprite.flip_h = true
 	elif direction == -1:
 		sprite.flip_h = false
+		
+	handle_animations(direction)
 		
 	#run enemy bounce checks if we're moving downward
 	#We could connect to the area2d's body_entered signal for this, but that can be a bit inconsistent
@@ -101,9 +107,10 @@ func _physics_process(delta: float) -> void:
 			var isMovingDownward = character.velocity.y > 0
 			var isBelowEnemy = character.global_position.y > body.global_position.y
 			
-			if (not isMovingDownward) or (isBelowEnemy):
+			if ((not isMovingDownward) or (isBelowEnemy)) or enemyController.spikyHelmet:
 				# get hit
 				if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
+					
 					respawn()
 			else:
 				if isMovingDownward:
@@ -116,12 +123,21 @@ func _physics_process(delta: float) -> void:
 		jumpReleased = true
 		character.velocity.y *= JUMP_CANCEL_FACTOR
 	
+	if !alive:
+		character.velocity *= 0
+	
 	character.move_and_slide()
 
 func respawn():
+	alive = false
+	sprite.play("death")
+	setInvulnerable(true)
+	await sprite.animation_finished
+	alive = true
 	character.global_position = GameManager.respawn_point
-	character.get_node("CollisionShape2D").set_deferred("disabled", false)
 	get_tree().call_group("EnemyController","respawn")
+	character.get_node("CollisionShape2D").set_deferred("disabled", false)
+	spawn()
 	
 func isMovementLocked():
 	return movementLocked > 0
@@ -161,16 +177,34 @@ func setGravityModifier(modifier):
 
 func isOnGround():
 	return (Time.get_ticks_msec() - lastOnGroundTime) <= COYOTE_TIME
+
+func setEnemyBounceHeightModifier(modifier):
+	enemyBounceHeightModifier = modifier
 	
 func handle_animations(direction):
-	if !jumping:
-		if direction != 0:
-			sprite.play("walk")
-		else:
-			sprite.play("idle")
+	if alive && not busy:
+		if !jumping:
+			if direction != 0:
+				sprite.play("walk")
+			else:
+				sprite.play("idle")
 
 func play_jumping_animation():
+	if alive:
+		sprite.play("jump")
+		
+func play_dash_animation():
+	if alive:
+		sprite.play("dash")
+		
+func spawn():
+	await get_tree().create_timer(0.1).timeout
+	setInvulnerable(false)
 	sprite.play("jump")
+
+func play_bouncing_animation():
+	if alive:
+		sprite.play("bounce")
 
 func die():
 	sprite.play("death")

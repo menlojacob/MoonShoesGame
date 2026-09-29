@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_lvfns"]
 [ext_resource type="Texture2D" uid="uid://cydd3rwwlu324" path="res://Assets/sprites/TileSet.png" id="2_gni6d"]
 [ext_resource type="PackedScene" uid="uid://cbb5sv8a356sc" path="res://Scenes/test_enemy.tscn" id="2_sojq8"]
-[ext_resource type="Texture2D" uid="uid://b6j8hage2autb" path="res://Assets/sprites/Level1Background.png" id="3_3lrk7"]
+[ext_resource type="Texture2D" uid="uid://sdixguvai48f" path="res://CityBackground.png" id="3_3lrk7"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="3_hi7j2"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3lrk7"]
@@ -2594,18 +2594,17 @@ position = Vector2(3671, -100)
 position = Vector2(-1, -9)
 
 [node name="Camera2D2" parent="Character" index="7" unique_id=1926023987]
-metadata/_edit_lock_ = true
+zoom = Vector2(3, 3)
 
-[node name="BackgroundImage" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1184354376]
+[node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1534769145]
 z_index = -10
-offset_left = -144.0
-offset_top = -81.0
-offset_right = 144.0
-offset_bottom = 124.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 122.0
 texture = ExtResource("3_3lrk7")
 expand_mode = 1
 stretch_mode = 4
-metadata/_edit_lock_ = true
 
 [node name="TestEnemy31" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=15804438 instance=ExtResource("2_sojq8")]
 position = Vector2(3465, -408)
@@ -2649,16 +2648,16 @@ position = Vector2(1386, -111)
 position = Vector2(1325, -88)
 
 [node name="TestEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="11" unique_id=881402964 instance=ExtResource("2_sojq8")]
-position = Vector2(1375, -204)
+position = Vector2(1358, -213)
 
 [node name="TestEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="12" unique_id=329706261 instance=ExtResource("2_sojq8")]
-position = Vector2(1330, -249)
+position = Vector2(1316, -261)
 
 [node name="TestEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="13" unique_id=821016909 instance=ExtResource("2_sojq8")]
-position = Vector2(1386, -269)
+position = Vector2(1391, -282)
 
 [node name="TestEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="14" unique_id=440441841 instance=ExtResource("2_sojq8")]
-position = Vector2(1440, -280)
+position = Vector2(1459, -297)
 
 [node name="TestEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="15" unique_id=1846061058 instance=ExtResource("2_sojq8")]
 position = Vector2(1666, -111)

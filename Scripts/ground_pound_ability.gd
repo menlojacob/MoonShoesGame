@@ -10,6 +10,7 @@ func startPound():
 	characterController.setBusy(true)
 	characterController.setHorizontalSpeedModifier(0.5)
 	characterController.setGravityModifier(1.5)
+	characterController.setEnemyBounceHeightModifier(2)
 	characterController.jump(24, false)
 
 func stopPound():
@@ -17,6 +18,13 @@ func stopPound():
 	characterController.setBusy(false)
 	characterController.setHorizontalSpeedModifier(1)
 	characterController.setGravityModifier(1)
+	characterController.setEnemyBounceHeightModifier(1)
+
+func _ready():
+	characterController.jumpedOnEnemy.connect(func():
+		if isPounding:
+			stopPound()
+	)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ground_pound") and (not characterController.isBusy()) and not (characterController.isOnGround()):

@@ -12,12 +12,12 @@ var touchedGround = true
 
 func dash(initialDelta):
 	currentDashTime = initialDelta
+	character.play_dash_animation()
 	currentDashDirection = characterController.getLastValidDirection()
 	characterController.lockMovement()
 	characterController.setBusy(true)
 	characterController.setInvulnerable(true)
 	characterController.touchedEnemy.connect(dashJump)
-	
 	touchedGround = false
 	
 func stopDash():
