@@ -10,7 +10,7 @@ func startPound():
 	characterController.setBusy(true)
 	characterController.setHorizontalSpeedModifier(0.5)
 	characterController.setGravityModifier(1.5)
-	characterController.setEnemyBounceHeightModifier(2)
+	characterController.setEnemyBounceHeightModifier(1.75)
 	characterController.jump(24, false)
 
 func stopPound():
