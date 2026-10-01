@@ -28,6 +28,7 @@ var enemyBounceHeightModifier = 1
 
 signal touchedEnemy
 signal jumpedOnEnemy
+signal died
 
 func jump(height = JUMP_HEIGHT, variableHeight = true):
 	#calculate force needed to reach height
@@ -111,12 +112,13 @@ func _physics_process(delta: float) -> void:
 				if ((not isMovingDownward) or (isBelowEnemy)) or enemyController.spikyHelmet:
 					# get hit
 					if (not isInvulnerable()) and body.get_instance_id() != lastJumpedOnEnemyId:
-						
 						respawn()
+						break
 				else:
 					if isMovingDownward:
 						# bounce
 						jumpOffEnemy(body, enemyController)
+						break
 			
 				touchedEnemy.emit(body, enemyController)
 	
@@ -124,21 +126,28 @@ func _physics_process(delta: float) -> void:
 		jumpReleased = true
 		character.velocity.y *= JUMP_CANCEL_FACTOR
 	
-	if !alive:
-		character.velocity *= 0
-	
-	character.move_and_slide()
+	if alive:
+		character.move_and_slide()
 
 func respawn():
-	alive = false
+	setAlive(false)
 	sprite.play("death")
-	setInvulnerable(true)
+	died.emit()
+	
 	await sprite.animation_finished
-	alive = true
+	
 	character.global_position = GameManager.respawn_point
+	character.move_and_slide()
+	setAlive(true)
+	
 	get_tree().call_group("EnemyController","respawn")
-	character.get_node("CollisionShape2D").set_deferred("disabled", false)
-	spawn()
+
+func setAlive(isAlive : bool):
+	alive = isAlive
+	collisionArea.monitoring = isAlive
+	
+	if not isAlive:
+		character.velocity = Vector2.ZERO
 	
 func isMovementLocked():
 	return movementLocked > 0
@@ -168,7 +177,7 @@ func setInvulnerable(isInvulnerable : bool):
 		invulnerable -= 1
 		
 func isInvulnerable():
-	return invulnerable > 0
+	return invulnerable > 0 or (not alive)
 
 func setHorizontalSpeedModifier(modifier):
 	horizontalSpeedModifier = modifier
@@ -197,16 +206,7 @@ func play_jumping_animation():
 func play_dash_animation():
 	if alive:
 		sprite.play("dash")
-		
-func spawn():
-	await get_tree().create_timer(0.1).timeout
-	setInvulnerable(false)
-	sprite.play("jump")
 
 func play_bouncing_animation():
 	if alive:
 		sprite.play("bounce")
-
-func die():
-	sprite.play("death")
-	await sprite.animation_finished

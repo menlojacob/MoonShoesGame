@@ -20,11 +20,13 @@ func stopPound():
 	characterController.setGravityModifier(1)
 	characterController.setEnemyBounceHeightModifier(1)
 
+func stopPoundIfPossible():
+	if isPounding:
+		stopPound()
+
 func _ready():
-	characterController.jumpedOnEnemy.connect(func():
-		if isPounding:
-			stopPound()
-	)
+	characterController.jumpedOnEnemy.connect(stopPoundIfPossible)
+	characterController.died.connect(stopPoundIfPossible) #cancel pound on death
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ground_pound") and (not characterController.isBusy()) and not (characterController.isOnGround()):
