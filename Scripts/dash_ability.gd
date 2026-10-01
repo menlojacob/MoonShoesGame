@@ -36,6 +36,12 @@ func _ready():
 	characterController.jumpedOnEnemy.connect(func():
 		touchedGround = true	
 	)
+	
+	#cancel dash on death
+	characterController.died.connect(func():
+		if currentDashTime > 0.0:
+			stopDash()
+	)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dash") and (not characterController.isBusy()) and touchedGround and currentDashTime == 0.0:
