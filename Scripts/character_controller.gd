@@ -45,8 +45,8 @@ func jumpOffEnemy(enemyBody, enemyController):
 	var bounceHeight = JUMP_HEIGHT
 	var enemyCollisionShape = enemyBody.get_node_or_null("CollisionShape2D")
 	if enemyCollisionShape:
-		var topOfEnemyHeight = enemyBody.global_position.y - (enemyCollisionShape.shape.size.y/2)
-		var bottomOfPlayerHeight = character.global_position.y + (characterCollision.shape.size.y/2)
+		var topOfEnemyHeight = enemyCollisionShape.global_position.y - (enemyCollisionShape.shape.size.y/2)
+		var bottomOfPlayerHeight = characterCollision.global_position.y + (characterCollision.shape.size.y/2)
 		var difference = bottomOfPlayerHeight - topOfEnemyHeight
 		bounceHeight += difference
 	#add modifier (ground pound)

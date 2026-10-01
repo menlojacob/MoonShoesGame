@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b7uggetpie4x6" path="res://Scenes/enemy_controller.tscn" id="1_4u3x4"]
 [ext_resource type="Texture2D" uid="uid://bx7ovol1t6bad" path="res://Assets/sprites/FireflyEnemyWithDeath.png" id="3_i657n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nmkx"]
-size = Vector2(104, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u3x4"]
+size = Vector2(26, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3f5f"]
 atlas = ExtResource("3_i657n")
@@ -115,11 +115,10 @@ animations = [{
 collision_layer = 2
 script = ExtResource("1_3b5b1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904986721]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=568297462]
 z_index = 1
 position = Vector2(0, 2)
-scale = Vector2(0.25, 0.25)
-shape = SubResource("RectangleShape2D_5nmkx")
+shape = SubResource("RectangleShape2D_4u3x4")
 
 [node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("1_4u3x4")]
 

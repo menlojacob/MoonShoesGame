@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dx03lgs0xyrou" path="res://Assets/sprites/CharacterWDeath.png" id="1_ushfy"]
 [ext_resource type="Texture2D" uid="uid://bmkd7wpr6j318" path="res://Assets/sprites/NewJump.png" id="2_ejsiy"]
 [ext_resource type="Texture2D" uid="uid://bbkk6wje44c4e" path="res://Assets/sprites/Dash.png" id="3_2mse5"]
-[ext_resource type="PackedScene" uid="uid://cctp8kk5qdco8" path="res://Scenes/ground_pound_ability.tscn" id="3_nytcm"]
-[ext_resource type="PackedScene" uid="uid://n2ehclwjygdl" path="res://Scenes/dash_ability.tscn" id="4_ejsiy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7tkn"]
 atlas = ExtResource("1_ushfy")
@@ -411,7 +409,3 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollision" unique_id=1802755176]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_sqlfn")
-
-[node name="GroundPoundAbility" parent="." unique_id=37651454 instance=ExtResource("3_nytcm")]
-
-[node name="DashAbility" parent="." unique_id=1300372267 instance=ExtResource("4_ejsiy")]
