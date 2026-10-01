@@ -141,6 +141,7 @@ scale = Vector2(1.75, 1.75)
 shape = SubResource("RectangleShape2D_5nmkx")
 
 [node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("1_n4hav")]
+maxHealth = 999
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1581293770]
 scale = Vector2(1.75, 1.75)

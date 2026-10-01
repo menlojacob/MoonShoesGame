@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://co6xhcdlrg1fp"]
+
+[ext_resource type="PackedScene" uid="uid://bf8qkrcpf3v67" path="res://Scenes/level.tscn" id="1_v8nbp"]
+[ext_resource type="PackedScene" uid="uid://dyd5ii7wcpupr" path="res://Scenes/asteroid_enemy.tscn" id="2_jcit2"]
+[ext_resource type="PackedScene" uid="uid://n2ehclwjygdl" path="res://Scenes/dash_ability.tscn" id="2_vt7lo"]
+[ext_resource type="PackedScene" uid="uid://cctp8kk5qdco8" path="res://Scenes/ground_pound_ability.tscn" id="3_e27sj"]
+[ext_resource type="PackedScene" uid="uid://bwpn2mv4q143x" path="res://Scenes/circle_path.tscn" id="5_e27sj"]
+[ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3xrma"]
+[ext_resource type="PackedScene" uid="uid://djgn5qodrihhl" path="res://Scenes/spiky_star_enemy.tscn" id="8_relrn"]
+[ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="9_r1qxl"]
+
+[node name="Level" unique_id=624581394 instance=ExtResource("1_v8nbp")]
+
+[node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
+position = Vector2(-3935, 52)
+rotation = -3.1415927
+
+[node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("2_vt7lo")]
+
+[node name="GroundPoundAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="7" unique_id=37651454 instance=ExtResource("3_e27sj")]
+
+[node name="AsteroidEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1547104922 instance=ExtResource("2_jcit2")]
+position = Vector2(-2, 55)
+
+[node name="AsteroidEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=1768143066 instance=ExtResource("2_jcit2")]
+position = Vector2(160, 57)
+
+[node name="AsteroidEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="2" unique_id=951643214 instance=ExtResource("2_jcit2")]
+position = Vector2(273, -3)
+
+[node name="AsteroidEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="3" unique_id=620339774 instance=ExtResource("2_jcit2")]
+position = Vector2(-178, 54)
+
+[node name="AsteroidEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="4" unique_id=1789729013 instance=ExtResource("2_jcit2")]
+position = Vector2(-288, -26)
+
+[node name="AsteroidEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="5" unique_id=524003780 instance=ExtResource("2_jcit2")]
+position = Vector2(-598, -105)
+
+[node name="CirclePath" parent="Enemies/AsteroidEnemy6" index="3" unique_id=987068951 instance=ExtResource("5_e27sj")]
+
+[node name="AsteroidEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="6" unique_id=1886389474 instance=ExtResource("2_jcit2")]
+position = Vector2(-504, 16)
+
+[node name="CirclePath" parent="Enemies/AsteroidEnemy7" index="3" unique_id=1560755911 instance=ExtResource("5_e27sj")]
+
+[node name="AsteroidEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="7" unique_id=696346574 instance=ExtResource("2_jcit2")]
+position = Vector2(-398, -96)
+
+[node name="CirclePath" parent="Enemies/AsteroidEnemy8" index="3" unique_id=436801818 instance=ExtResource("5_e27sj")]
+
+[node name="AsteroidEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="8" unique_id=1550795355 instance=ExtResource("2_jcit2")]
+position = Vector2(-775, -101)
+
+[node name="AsteroidEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="9" unique_id=698369673 instance=ExtResource("2_jcit2")]
+position = Vector2(-895, -190)
+
+[node name="MovementPath" parent="Enemies/AsteroidEnemy10" index="3" unique_id=1052420983 instance=ExtResource("6_3xrma")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/AsteroidEnemy10/MovementPath" index="0" unique_id=426100735]
+position = Vector2(-895, -190)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/AsteroidEnemy10/MovementPath" index="1" unique_id=1034132478]
+position = Vector2(-895, -340)
+
+[node name="StarEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="10" unique_id=29101376 instance=ExtResource("8_relrn")]
+position = Vector2(-1049, -428)
+
+[node name="StarEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="11" unique_id=1934113070 instance=ExtResource("8_relrn")]
+position = Vector2(-1130, -428)
+
+[node name="StarEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="12" unique_id=1338383574 instance=ExtResource("8_relrn")]
+position = Vector2(-1207, -429)
+
+[node name="StarEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="13" unique_id=1005196572 instance=ExtResource("8_relrn")]
+position = Vector2(-1286, -431)
+
+[node name="StarEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="14" unique_id=1128018355 instance=ExtResource("8_relrn")]
+position = Vector2(-1380, -477)
+
+[node name="StarEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="15" unique_id=542769810 instance=ExtResource("8_relrn")]
+position = Vector2(-1295, -535)
+
+[node name="StarEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="16" unique_id=637575991 instance=ExtResource("8_relrn")]
+position = Vector2(-1373, -599)
+
+[node name="StarEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="17" unique_id=1978634355 instance=ExtResource("8_relrn")]
+position = Vector2(-1293, -658)
+
+[node name="CirclePath" parent="Enemies/StarEnemy8" index="3" unique_id=789862834 instance=ExtResource("5_e27sj")]
+
+[node name="AsteroidEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="18" unique_id=348235465 instance=ExtResource("2_jcit2")]
+position = Vector2(-1293, -658)
+
+[node name="AsteroidEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="19" unique_id=2106415824 instance=ExtResource("2_jcit2")]
+position = Vector2(-942, -384)
+
+[node name="AsteroidEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="20" unique_id=641517501 instance=ExtResource("2_jcit2")]
+position = Vector2(-1407, -702)
+
+[node name="AsteroidEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="21" unique_id=526438972 instance=ExtResource("2_jcit2")]
+position = Vector2(-1538, -751)
+
+[node name="AsteroidEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="22" unique_id=582176701 instance=ExtResource("2_jcit2")]
+position = Vector2(-1661, -817)
+
+[node name="StarEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="23" unique_id=1843010493 instance=ExtResource("8_relrn")]
+position = Vector2(-1407, -702)
+
+[node name="CirclePath" parent="Enemies/StarEnemy9" index="3" unique_id=476904206 instance=ExtResource("5_e27sj")]
+speed = 3
+
+[node name="StarEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="24" unique_id=946722859 instance=ExtResource("8_relrn")]
+position = Vector2(-1538, -751)
+
+[node name="CirclePath" parent="Enemies/StarEnemy10" index="3" unique_id=371368274 instance=ExtResource("5_e27sj")]
+speed = 4
+
+[node name="StarEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="25" unique_id=1269744949 instance=ExtResource("8_relrn")]
+position = Vector2(-1661, -817)
+
+[node name="CirclePath" parent="Enemies/StarEnemy11" index="3" unique_id=30369913 instance=ExtResource("5_e27sj")]
+speed = 5
+
+[node name="StarEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="26" unique_id=1006867116 instance=ExtResource("8_relrn")]
+position = Vector2(-1886, -839)
+
+[node name="CirclePath" parent="Enemies/StarEnemy12" index="3" unique_id=1029839045 instance=ExtResource("5_e27sj")]
+
+[node name="StarEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="27" unique_id=227570177 instance=ExtResource("8_relrn")]
+position = Vector2(-1960, -840)
+
+[node name="CirclePath" parent="Enemies/StarEnemy13" index="3" unique_id=1666933787 instance=ExtResource("5_e27sj")]
+
+[node name="StarEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="28" unique_id=456694588 instance=ExtResource("8_relrn")]
+position = Vector2(-2125, -840)
+
+[node name="CirclePath" parent="Enemies/StarEnemy14" index="3" unique_id=1741752080 instance=ExtResource("5_e27sj")]
+
+[node name="StarEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="29" unique_id=746990695 instance=ExtResource("8_relrn")]
+position = Vector2(-2036, -840)
+
+[node name="CirclePath" parent="Enemies/StarEnemy15" index="3" unique_id=1231124947 instance=ExtResource("5_e27sj")]
+
+[node name="AsteroidEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="30" unique_id=1486116552 instance=ExtResource("2_jcit2")]
+position = Vector2(-1762, -819)
+
+[node name="AsteroidEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="31" unique_id=1126710309 instance=ExtResource("2_jcit2")]
+position = Vector2(-2247, -839)
+
+[node name="AsteroidEnemy18" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="32" unique_id=1206479265 instance=ExtResource("2_jcit2")]
+position = Vector2(-2354, -975)
+
+[node name="AsteroidEnemy19" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="33" unique_id=1514664748 instance=ExtResource("2_jcit2")]
+position = Vector2(-2271, -1106)
+
+[node name="AsteroidEnemy20" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="34" unique_id=970793969 instance=ExtResource("2_jcit2")]
+position = Vector2(-2359, -1251)
+
+[node name="AsteroidEnemy21" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="35" unique_id=145065816 instance=ExtResource("2_jcit2")]
+position = Vector2(-2282, -1365)
+
+[node name="AsteroidEnemy22" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="36" unique_id=1480355566 instance=ExtResource("2_jcit2")]
+position = Vector2(-2386, -1457)
+
+[node name="AsteroidEnemy23" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="37" unique_id=1450492984 instance=ExtResource("2_jcit2")]
+position = Vector2(-2283, -1557)
+
+[node name="AsteroidEnemy24" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="38" unique_id=1814555392 instance=ExtResource("2_jcit2")]
+position = Vector2(-2281, -1678)
+
+[node name="AsteroidEnemy25" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="39" unique_id=2104435609 instance=ExtResource("2_jcit2")]
+position = Vector2(-2379, -1597)
+
+[node name="AsteroidEnemy26" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="40" unique_id=1952674674 instance=ExtResource("2_jcit2")]
+position = Vector2(-2374, -1731)
+
+[node name="AsteroidEnemy27" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="41" unique_id=614109572 instance=ExtResource("2_jcit2")]
+position = Vector2(-2267, -1790)
+
+[node name="StarEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="42" unique_id=1027768515 instance=ExtResource("8_relrn")]
+position = Vector2(-2326, -1876)
+
+[node name="StarEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="43" unique_id=1095912304 instance=ExtResource("8_relrn")]
+position = Vector2(-2264, -1918)
+
+[node name="StarEnemy18" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="44" unique_id=676470379 instance=ExtResource("8_relrn")]
+position = Vector2(-2324, -1956)
+
+[node name="StarEnemy19" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="45" unique_id=747720519 instance=ExtResource("8_relrn")]
+position = Vector2(-2262, -1997)
+
+[node name="StarEnemy20" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="46" unique_id=2024357621 instance=ExtResource("8_relrn")]
+position = Vector2(-2321, -2033)
+
+[node name="StarEnemy21" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="47" unique_id=933176461 instance=ExtResource("8_relrn")]
+position = Vector2(-2272, -2078)
+
+[node name="StarEnemy22" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="48" unique_id=1072675884 instance=ExtResource("8_relrn")]
+position = Vector2(-2328, -2206)
+
+[node name="StarEnemy23" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="49" unique_id=1723749985 instance=ExtResource("8_relrn")]
+position = Vector2(-2387, -2205)
+
+[node name="StarEnemy24" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="50" unique_id=276012424 instance=ExtResource("8_relrn")]
+position = Vector2(-2451, -2205)
+
+[node name="StarEnemy25" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="51" unique_id=1796677420 instance=ExtResource("8_relrn")]
+position = Vector2(-2513, -2205)
+
+[node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("9_r1qxl")]
+position = Vector2(-776, -135)
+
+[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="1" unique_id=1529840903 instance=ExtResource("9_r1qxl")]
+position = Vector2(-942, -420)
+
+[node name="Checkpoint3" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="2" unique_id=1108991508 instance=ExtResource("9_r1qxl")]
+position = Vector2(-289, -63)
+
+[node name="Checkpoint4" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="3" unique_id=812739768 instance=ExtResource("9_r1qxl")]
+position = Vector2(-1292, -686)
+
+[node name="Checkpoint5" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="4" unique_id=947009366 instance=ExtResource("9_r1qxl")]
+position = Vector2(-1763, -850)
+
+[node name="Checkpoint6" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="5" unique_id=2041697765 instance=ExtResource("9_r1qxl")]
+position = Vector2(-2246, -869)
+
+[node name="Checkpoint7" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="6" unique_id=306452864 instance=ExtResource("9_r1qxl")]
+position = Vector2(-2268, -1821)
+
+[node name="Label" type="Label" parent="." index="9" unique_id=992821856]
+offset_left = -55.0
+offset_top = -61.0
+offset_right = 108.0
+offset_bottom = -38.0
+text = "Asteroids cannot die!"
+
+[node name="Label2" type="Label" parent="." index="10" unique_id=1401390016]
+offset_left = -1019.0
+offset_top = -558.0
+offset_right = -844.0
+offset_bottom = -535.0
+text = "Beware the spiky stars"
