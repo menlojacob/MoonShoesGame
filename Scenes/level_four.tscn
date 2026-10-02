@@ -172,7 +172,7 @@ rotation = -3.1415927
 [node name="GroundPoundAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="7" unique_id=37651454 instance=ExtResource("3_e27sj")]
 
 [node name="AsteroidEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1547104922 instance=ExtResource("2_jcit2")]
-position = Vector2(-2, 55)
+position = Vector2(-1, 84)
 
 [node name="AsteroidEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="1" unique_id=1768143066 instance=ExtResource("2_jcit2")]
 position = Vector2(160, 57)
