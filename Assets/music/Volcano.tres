@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://c7jsyn123w0e1"]
+
+[ext_resource type="Script" uid="uid://btuvll4go5o86" path="res://addons/MusicManager/music_track.gd" id="1_qg13c"]
+[ext_resource type="AudioStream" uid="uid://b0cbmhd7aey8w" path="res://Assets/music/volcano_v2.mp3" id="2_1n5r8"]
+
+[resource]
+script = ExtResource("1_qg13c")
+name = "Volcano"
+artist = "Jacob Abraham"
+track = ExtResource("2_1n5r8")
+metadata/_custom_type_script = "uid://btuvll4go5o86"

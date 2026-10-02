@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://bpmgnpx55hb8o"]
+
+[ext_resource type="Script" uid="uid://btuvll4go5o86" path="res://addons/MusicManager/music_track.gd" id="1_rpj11"]
+[ext_resource type="AudioStream" uid="uid://dnveb2t2vco6i" path="res://Assets/music/IntroTutorial_Stage.mp3" id="2_uqdud"]
+
+[resource]
+script = ExtResource("1_rpj11")
+name = "Intro Song"
+artist = "Jacob Abraham"
+track = ExtResource("2_uqdud")
+metadata/_custom_type_script = "uid://btuvll4go5o86"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://bc54t3j57rbup"]
+
+[ext_resource type="Script" uid="uid://btuvll4go5o86" path="res://addons/MusicManager/music_track.gd" id="1_auuw4"]
+[ext_resource type="AudioStream" uid="uid://c2ll4b6ud5q2l" path="res://Assets/music/MOUNTAIN_ROMP_FINAL_V2.mp3" id="2_ggh6m"]
+
+[resource]
+script = ExtResource("1_auuw4")
+name = "Mountain Romp!"
+artist = "Jacob Abraham"
+track = ExtResource("2_ggh6m")
+metadata/_custom_type_script = "uid://btuvll4go5o86"

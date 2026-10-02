@@ -29,6 +29,10 @@ GameManager="*uid://nmree8uj3s70"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg")
+
 [global_group]
 
 EnemyCollision="Collision shapes part of this group will be considered for enemy collision"
