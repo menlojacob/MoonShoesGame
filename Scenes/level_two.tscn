@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://n2ehclwjygdl" path="res://Scenes/dash_ability.tscn" id="3_t1jg6"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="4_7ycwu"]
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="4_8jpcs"]
+[ext_resource type="Texture2D" uid="uid://u82dx3b2oxku" path="res://Assets/sprites/MountainBackground.png" id="4_gejx0"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="4_ye0dk"]
 [ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="5_ye0dk"]
 
@@ -254,6 +255,14 @@ tile_set = SubResource("TileSet_3lrk7")
 position = Vector2(2811, -1627)
 
 [node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("3_t1jg6")]
+
+[node name="TextureRect" type="TextureRect" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="7" unique_id=1429100518]
+z_index = -1
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+texture = ExtResource("4_gejx0")
 
 [node name="FireflyEnemy20" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1133848270 instance=ExtResource("5_ye0dk")]
 position = Vector2(2568, -1512)

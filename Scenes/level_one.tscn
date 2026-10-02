@@ -2593,15 +2593,15 @@ position = Vector2(3671, -100)
 [node name="Character" parent="." index="4" unique_id=1580066455]
 position = Vector2(-1, -9)
 
-[node name="Camera2D2" parent="Character" index="7" unique_id=1926023987]
+[node name="Camera2D2" parent="Character" index="5" unique_id=1926023987]
 zoom = Vector2(3, 3)
 
 [node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" index="0" unique_id=1534769145]
 z_index = -10
-offset_left = -192.0
-offset_top = -108.0
-offset_right = 192.0
-offset_bottom = 122.0
+offset_left = -230.0
+offset_top = -129.0
+offset_right = 232.0
+offset_bottom = 130.0
 texture = ExtResource("3_3lrk7")
 expand_mode = 1
 stretch_mode = 4
