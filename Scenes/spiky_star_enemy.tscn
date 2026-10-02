@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djgn5qodrihhl"]
+
+[ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="1_5lhev"]
+
+[node name="StarEnemy" unique_id=29101376 instance=ExtResource("1_5lhev")]
+
+[node name="EnemyController" parent="." index="1" unique_id=1922786584]
+spikyHelmet = true
