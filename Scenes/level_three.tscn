@@ -330,55 +330,43 @@ position = Vector2(356, 637)
 [node name="StarEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="21" unique_id=1741760874 instance=ExtResource("3_whtm6")]
 position = Vector2(824, 689)
 
-[node name="StarEnemy19" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="22" unique_id=787713154 instance=ExtResource("3_whtm6")]
-position = Vector2(399, 965)
-
-[node name="StarEnemy20" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="23" unique_id=222579692 instance=ExtResource("3_whtm6")]
-position = Vector2(330, 965)
-
-[node name="StarEnemy21" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="24" unique_id=241069105 instance=ExtResource("3_whtm6")]
-position = Vector2(262, 965)
-
-[node name="StarEnemy22" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="25" unique_id=995598326 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy22" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="22" unique_id=995598326 instance=ExtResource("3_whtm6")]
 position = Vector2(120, 965)
 
-[node name="StarEnemy23" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="26" unique_id=465951377 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy23" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="23" unique_id=465951377 instance=ExtResource("3_whtm6")]
 position = Vector2(56, 965)
 
-[node name="StarEnemy24" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="27" unique_id=1956379317 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy24" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="24" unique_id=1956379317 instance=ExtResource("3_whtm6")]
 position = Vector2(-7, 965)
 
-[node name="StarEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="28" unique_id=479038525 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="25" unique_id=479038525 instance=ExtResource("3_whtm6")]
 position = Vector2(889, 689)
 
-[node name="StarEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="29" unique_id=797863959 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="26" unique_id=797863959 instance=ExtResource("3_whtm6")]
 position = Vector2(952, 689)
 
-[node name="StarEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="30" unique_id=786405639 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="27" unique_id=786405639 instance=ExtResource("3_whtm6")]
 position = Vector2(1016, 689)
 
-[node name="StarEnemy18" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="31" unique_id=1032606620 instance=ExtResource("3_whtm6")]
-position = Vector2(946, 1108)
-
-[node name="MovementPath" parent="Enemies/StarEnemy18" index="3" unique_id=1052420983 instance=ExtResource("6_nljgw")]
-
-[node name="Marker2D2" type="Marker2D" parent="Enemies/StarEnemy18/MovementPath" index="0" unique_id=2046816057]
-position = Vector2(946, 1108)
-
-[node name="Marker2D" type="Marker2D" parent="Enemies/StarEnemy18/MovementPath" index="1" unique_id=1902593280]
-position = Vector2(946, 1027)
-
-[node name="StarEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="32" unique_id=1055723050 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="28" unique_id=1055723050 instance=ExtResource("3_whtm6")]
 position = Vector2(63, 144)
 
-[node name="StarEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="33" unique_id=93487503 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="29" unique_id=93487503 instance=ExtResource("3_whtm6")]
 position = Vector2(278, -11)
 
-[node name="StarEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="34" unique_id=47505843 instance=ExtResource("3_whtm6")]
+[node name="StarEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="30" unique_id=47505843 instance=ExtResource("3_whtm6")]
 position = Vector2(330, -11)
 
-[node name="StarEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="35" unique_id=432555016 instance=ExtResource("3_whtm6")]
-position = Vector2(530, 34)
+[node name="FireflyEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="31" unique_id=1556383729 instance=ExtResource("5_300rn")]
+position = Vector2(947, 1108)
+
+[node name="MovementPath" parent="Enemies/FireflyEnemy13" index="3" unique_id=1052420983 instance=ExtResource("6_nljgw")]
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/FireflyEnemy13/MovementPath" index="0" unique_id=2046816057]
+position = Vector2(946, 1108)
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/FireflyEnemy13/MovementPath" index="1" unique_id=1902593280]
+position = Vector2(946, 1027)
 
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("7_nljgw")]
 position = Vector2(148, 6)
@@ -666,13 +654,14 @@ position = Vector2(256, 588)
 shape = SubResource("RectangleShape2D_qfl2u")
 one_way_collision = true
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="44" unique_id=1166245162]
+[node name="FireflyEnemy" parent="." index="41" unique_id=1441205242 instance=ExtResource("5_300rn")]
+position = Vector2(527, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0" unique_id=63766972]
-position = Vector2(-672, 1004)
-shape = SubResource("RectangleShape2D_4g860")
-one_way_collision = true
+[node name="FireflyEnemy2" parent="." index="42" unique_id=1952816712 instance=ExtResource("5_300rn")]
+position = Vector2(255, 944)
 
-[node name="Rocket" type="Sprite2D" parent="." index="45" unique_id=1594977938]
-position = Vector2(-663, 948)
-texture = ExtResource("11_q5s3g")
+[node name="FireflyEnemy3" parent="." index="43" unique_id=258834716 instance=ExtResource("5_300rn")]
+position = Vector2(322, 944)
+
+[node name="FireflyEnemy4" parent="." index="44" unique_id=225660482 instance=ExtResource("5_300rn")]
+position = Vector2(385, 946)

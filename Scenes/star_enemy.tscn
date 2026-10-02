@@ -259,6 +259,7 @@ z_index = 1
 shape = SubResource("RectangleShape2D_c8kw3")
 
 [node name="EnemyController" parent="." unique_id=1922786584 instance=ExtResource("1_yphsp")]
+spikyHelmet = true
 
 [node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_foqnp")]
 sprite_frames = SubResource("SpriteFrames_2cm3o")
