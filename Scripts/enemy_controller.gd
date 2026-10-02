@@ -10,6 +10,9 @@ extends Node
 var health #becomes equal to maxhealth in _ready
 var alive = true
 
+var respawnTimer
+var respawnCallable
+
 signal on_jumped_on
 signal died
 signal respawned
@@ -22,6 +25,14 @@ func respawn():
 	health = maxHealth #reset health to max
 	
 	respawned.emit()
+	
+	cancelRespawnTimer()
+	
+func cancelRespawnTimer():
+	if respawnTimer and respawnCallable:
+		respawnTimer.timeout.disconnect(respawnCallable)
+		respawnTimer = null
+		respawnCallable = null
 
 func jumped_on():
 	#reduce health
@@ -30,10 +41,10 @@ func jumped_on():
 		alive = false
 		died.emit()
 		
-		get_tree().create_timer(5).timeout.connect(func():
-			if not alive:
-				respawn()	
-		)
+		respawnTimer = get_tree().create_timer(5)
+		respawnCallable = func():
+			respawn()	
+		respawnTimer.timeout.connect(respawnCallable)
 	else:
 		on_jumped_on.emit()
 
