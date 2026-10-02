@@ -254,15 +254,17 @@ tile_set = SubResource("TileSet_3lrk7")
 [node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
 position = Vector2(2811, -1627)
 
-[node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("3_t1jg6")]
-
-[node name="TextureRect" type="TextureRect" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="7" unique_id=1429100518]
+[node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" parent_id_path=PackedInt32Array(1926023987) index="0" unique_id=1429100518]
 z_index = -1
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
+offset_left = -231.0
+offset_top = -130.0
+offset_right = 231.0
+offset_bottom = 198.0
 texture = ExtResource("4_gejx0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("3_t1jg6")]
 
 [node name="FireflyEnemy20" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1133848270 instance=ExtResource("5_ye0dk")]
 position = Vector2(2568, -1512)
