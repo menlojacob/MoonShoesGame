@@ -636,3 +636,10 @@ offset_top = -47.0
 offset_right = 40.0
 offset_bottom = -24.0
 text = "Shift to dash"
+
+[node name="Label2" type="Label" parent="." index="10" unique_id=2109112]
+offset_left = 1265.0
+offset_top = -138.0
+offset_right = 1420.0
+offset_bottom = -115.0
+text = "Stars are very spiky!"
