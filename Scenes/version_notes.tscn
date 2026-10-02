@@ -14,6 +14,8 @@ offset_bottom = 479.0
 [node name="VersionNotes" type="Label" parent="ScrollContainer" unique_id=59596322]
 layout_mode = 2
 text = "Version Notes:
+Sprint 6
+- Added level 4
 Sprint 5
 - Added level 2 and 3, unlocked after you beat the previous level
 - Added abilities dash and ground pound, unlocked in level 2 and
