@@ -164,7 +164,7 @@ tile_map_data = PackedByteArray("AAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAE
 tile_set = SubResource("TileSet_r1qxl")
 
 [node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
-position = Vector2(-6080, -27)
+position = Vector2(-5145, -2253)
 rotation = -3.1415927
 
 [node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("2_vt7lo")]
