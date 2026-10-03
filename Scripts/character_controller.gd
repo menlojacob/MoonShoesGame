@@ -211,7 +211,6 @@ func play_bouncing_animation():
 	if alive:
 		sprite.play("bounce")
 
-func play_groundpound_animation():
+func play_ground_pound_animation():
 	if alive:
 		sprite.play("groundpound")
-		await sprite.animation_finished
