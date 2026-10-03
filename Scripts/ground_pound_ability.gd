@@ -7,6 +7,7 @@ var isPounding = false
 
 func startPound():
 	isPounding = true
+	characterController.play_groundpound_animation();
 	characterController.setBusy(true)
 	characterController.setHorizontalSpeedModifier(0.5)
 	characterController.setGravityModifier(1.5)

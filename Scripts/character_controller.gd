@@ -210,3 +210,8 @@ func play_dash_animation():
 func play_bouncing_animation():
 	if alive:
 		sprite.play("bounce")
+
+func play_groundpound_animation():
+	if alive:
+		sprite.play("groundpound")
+		await sprite.animation_finished
