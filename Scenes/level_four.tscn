@@ -519,6 +519,30 @@ position = Vector2(-4650, -2246)
 [node name="AsteroidEnemy59" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="96" unique_id=2018249369 instance=ExtResource("2_jcit2")]
 position = Vector2(-4653, -2115)
 
+[node name="AsteroidEnemy60" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="97" unique_id=1142841792 instance=ExtResource("2_jcit2")]
+position = Vector2(-4062, -2362)
+
+[node name="AsteroidEnemy61" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="98" unique_id=86429071 instance=ExtResource("2_jcit2")]
+position = Vector2(-4060, -2401)
+
+[node name="AsteroidEnemy62" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="99" unique_id=778361884 instance=ExtResource("2_jcit2")]
+position = Vector2(-4289, -2396)
+
+[node name="AsteroidEnemy63" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="100" unique_id=1135395460 instance=ExtResource("2_jcit2")]
+position = Vector2(-4287, -2436)
+
+[node name="FireflyEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="101" unique_id=1493695888 instance=ExtResource("9_ko7jo")]
+position = Vector2(-3749, -2169)
+
+[node name="FireflyEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="102" unique_id=1390728888 instance=ExtResource("9_ko7jo")]
+position = Vector2(-3974, -2202)
+
+[node name="FireflyEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="103" unique_id=1430541477 instance=ExtResource("9_ko7jo")]
+position = Vector2(-4199, -2203)
+
+[node name="AsteroidEnemy64" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="104" unique_id=260240029 instance=ExtResource("2_jcit2")]
+position = Vector2(-4393, -2187)
+
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("9_r1qxl")]
 position = Vector2(-776, -135)
 
@@ -562,15 +586,3 @@ offset_top = -558.0
 offset_right = -844.0
 offset_bottom = -535.0
 text = "Beware the spiky stars"
-
-[node name="FireflyEnemy" parent="." index="11" unique_id=1493695888 instance=ExtResource("9_ko7jo")]
-position = Vector2(-3749, -2169)
-
-[node name="FireflyEnemy2" parent="." index="12" unique_id=1390728888 instance=ExtResource("9_ko7jo")]
-position = Vector2(-3974, -2202)
-
-[node name="FireflyEnemy3" parent="." index="13" unique_id=1430541477 instance=ExtResource("9_ko7jo")]
-position = Vector2(-4199, -2203)
-
-[node name="AsteroidEnemy" parent="." index="14" unique_id=260240029 instance=ExtResource("2_jcit2")]
-position = Vector2(-4393, -2187)
