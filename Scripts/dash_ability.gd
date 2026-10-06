@@ -9,10 +9,12 @@ var touchedGround = true
 
 @onready var character = self.get_parent()
 @onready var characterController = character.get_node_or_null("CharacterController")
+@onready var dash_sound: AudioStreamPlayer = $DashSound
 
 func dash(initialDelta):
 	currentDashTime = initialDelta
 	character.play_dash_animation()
+	dash_sound.play()
 	currentDashDirection = characterController.getLastValidDirection()
 	characterController.lockMovement()
 	characterController.setBusy(true)

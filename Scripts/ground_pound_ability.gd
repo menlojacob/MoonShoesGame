@@ -4,6 +4,8 @@ var isPounding = false
 
 @onready var character = self.get_parent()
 @onready var characterController = character.get_node_or_null("CharacterController")
+@onready var pound_sound: AudioStreamPlayer = $PoundSound
+
 
 func startPound():
 	isPounding = true
@@ -25,8 +27,13 @@ func stopPoundIfPossible():
 	if isPounding:
 		stopPound()
 
+func enemyPound():
+	if isPounding:
+		pound_sound.play()
+	stopPoundIfPossible()
+
 func _ready():
-	characterController.jumpedOnEnemy.connect(stopPoundIfPossible)
+	characterController.jumpedOnEnemy.connect(enemyPound)
 	characterController.died.connect(stopPoundIfPossible) #cancel pound on death
 
 func _physics_process(delta: float) -> void:

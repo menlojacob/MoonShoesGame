@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dx03lgs0xyrou" path="res://Assets/sprites/CharacterWDeath.png" id="1_ushfy"]
 [ext_resource type="Texture2D" uid="uid://bmkd7wpr6j318" path="res://Assets/sprites/NewJump.png" id="2_ejsiy"]
 [ext_resource type="Texture2D" uid="uid://b0rla3c237tcp" path="res://Assets/sprites/Dash&GroundpoundNew.png" id="4_ejsiy"]
+[ext_resource type="AudioStream" uid="uid://wk2j4uh4mgm7" path="res://Assets/sounds/qubodup__cloud-poof.wav" id="6_2mse5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7tkn"]
 atlas = ExtResource("1_ushfy")
@@ -533,6 +534,10 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_v5frw")
 
 [node name="CharacterController" parent="." unique_id=1441966244 instance=ExtResource("1_lkv7d")]
+
+[node name="BounceSound" type="AudioStreamPlayer" parent="CharacterController" unique_id=468132056]
+stream = ExtResource("6_2mse5")
+volume_db = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2072228522]
 zoom = Vector2(2.5, 2.5)

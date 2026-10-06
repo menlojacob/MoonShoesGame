@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cctp8kk5qdco8"]
 
 [ext_resource type="Script" uid="uid://cuug70w6oubyy" path="res://Scripts/ground_pound_ability.gd" id="1_sbv4p"]
+[ext_resource type="AudioStream" uid="uid://d13mfdg01a420" path="res://Assets/sounds/perduuus__dash-sfx.wav" id="2_a752h"]
 
 [node name="GroundPoundAbility" type="Node" unique_id=37651454]
 script = ExtResource("1_sbv4p")
+
+[node name="PoundSound" type="AudioStreamPlayer" parent="." unique_id=2124829510]
+stream = ExtResource("2_a752h")
