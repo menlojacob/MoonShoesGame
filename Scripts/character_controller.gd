@@ -10,6 +10,7 @@ const COYOTE_TIME = 0.15 * 1000 #0.15 seconds, the 1000 is for calculation reaso
 @onready var lastSafePosition = character.global_position
 @onready var sprite: AnimatedSprite2D = character.get_node("Sprite")
 @onready var characterCollision = character.get_node("CollisionShape2D")
+@onready var bounce_sound: AudioStreamPlayer = $BounceSound
 
 var lastJumpedOnEnemyId = 0
 var jumping = false # for the jump animation so it doesnt get overwritten
@@ -55,6 +56,7 @@ func jumpOffEnemy(enemyBody, enemyController):
 	
 	if not isMovementLocked():
 		jump(bounceHeight, false)
+		bounce_sound.play()
 					
 	enemyController.jumped_on()
 	lastJumpedOnEnemyId = enemyBody.get_instance_id()
@@ -216,3 +218,9 @@ func play_ground_pound_animation():
 		sprite.play("groundpound_a")
 		await sprite.animation_finished
 		sprite.play("groundpound_b")
+
+## Takes in an AudioStream and replaces the bounce sound with it, returning the old AudioStream
+func change_bounce_sound(new_sound: AudioStream) -> AudioStream:
+	var old_sound = bounce_sound.stream
+	bounce_sound.stream = new_sound
+	return old_sound
