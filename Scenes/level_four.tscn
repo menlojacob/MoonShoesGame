@@ -167,9 +167,12 @@ tile_set = SubResource("TileSet_r1qxl")
 position = Vector2(-5145, -2253)
 rotation = -3.1415927
 
-[node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("2_vt7lo")]
+[node name="Character" parent="." index="4" unique_id=1580066455]
+position = Vector2(-3489, -2251)
 
-[node name="GroundPoundAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="7" unique_id=37651454 instance=ExtResource("3_e27sj")]
+[node name="DashAbility" parent="Character" index="6" unique_id=1300372267 instance=ExtResource("2_vt7lo")]
+
+[node name="GroundPoundAbility" parent="Character" index="7" unique_id=37651454 instance=ExtResource("3_e27sj")]
 
 [node name="AsteroidEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="0" unique_id=1547104922 instance=ExtResource("2_jcit2")]
 position = Vector2(-1, 84)
@@ -451,7 +454,7 @@ position = Vector2(-3878, -2273)
 position = Vector2(-3877, -2313)
 
 [node name="AsteroidEnemy40" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="74" unique_id=1298785346 instance=ExtResource("2_jcit2")]
-position = Vector2(-4095, -2207)
+position = Vector2(-4113, -2206)
 
 [node name="AsteroidEnemy41" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="75" unique_id=551932526 instance=ExtResource("2_jcit2")]
 position = Vector2(-4059, -2242)
@@ -466,7 +469,7 @@ position = Vector2(-4060, -2283)
 position = Vector2(-4063, -2324)
 
 [node name="AsteroidEnemy46" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="79" unique_id=371648997 instance=ExtResource("2_jcit2")]
-position = Vector2(-4094, -2294)
+position = Vector2(-4115, -2302)
 
 [node name="AsteroidEnemy48" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="80" unique_id=387590055 instance=ExtResource("2_jcit2")]
 position = Vector2(-4292, -2161)
@@ -542,6 +545,9 @@ position = Vector2(-4199, -2203)
 
 [node name="AsteroidEnemy64" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="104" unique_id=260240029 instance=ExtResource("2_jcit2")]
 position = Vector2(-4393, -2187)
+
+[node name="AsteroidEnemy65" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="105" unique_id=597045240 instance=ExtResource("2_jcit2")]
+position = Vector2(-4060, -2439)
 
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("9_r1qxl")]
 position = Vector2(-776, -135)
