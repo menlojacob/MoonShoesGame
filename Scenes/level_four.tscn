@@ -581,34 +581,34 @@ position = Vector2(-4393, -2187)
 position = Vector2(-4060, -2439)
 
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("9_r1qxl")]
-position = Vector2(-776, -135)
+position = Vector2(-775, -163)
 
 [node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="1" unique_id=1529840903 instance=ExtResource("9_r1qxl")]
-position = Vector2(-942, -420)
+position = Vector2(-944, -440)
 
 [node name="Checkpoint3" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="2" unique_id=1108991508 instance=ExtResource("9_r1qxl")]
-position = Vector2(-289, -63)
+position = Vector2(-288, -82)
 
 [node name="Checkpoint4" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="3" unique_id=812739768 instance=ExtResource("9_r1qxl")]
-position = Vector2(-1292, -686)
+position = Vector2(-1295, -709)
 
 [node name="Checkpoint5" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="4" unique_id=947009366 instance=ExtResource("9_r1qxl")]
-position = Vector2(-1763, -850)
+position = Vector2(-1764, -878)
 
 [node name="Checkpoint6" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="5" unique_id=2041697765 instance=ExtResource("9_r1qxl")]
-position = Vector2(-2246, -869)
+position = Vector2(-2249, -892)
 
 [node name="Checkpoint7" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="6" unique_id=306452864 instance=ExtResource("9_r1qxl")]
-position = Vector2(-2268, -1821)
+position = Vector2(-2266, -1846)
 
 [node name="Checkpoint8" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="7" unique_id=745480298 instance=ExtResource("9_r1qxl")]
-position = Vector2(-2782, -2269)
+position = Vector2(-2784, -2289)
 
 [node name="Checkpoint9" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="8" unique_id=753227852 instance=ExtResource("9_r1qxl")]
-position = Vector2(-3495, -2147)
+position = Vector2(-3492, -2167)
 
 [node name="Checkpoint10" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="9" unique_id=370017139 instance=ExtResource("9_r1qxl")]
-position = Vector2(-4394, -2216)
+position = Vector2(-4392, -2241)
 
 [node name="Label" type="Label" parent="." index="9" unique_id=992821856]
 offset_left = -55.0
