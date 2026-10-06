@@ -633,27 +633,6 @@ position = Vector2(1076, -121)
 position = Vector2(-92, 744.25)
 shape = SubResource("RectangleShape2D_8474f")
 
-[node name="Lava17" parent="." index="41" unique_id=2142128250 instance=ExtResource("3_rm1v0")]
-position = Vector2(1076, -121)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava17" index="0" unique_id=899932050]
-position = Vector2(-28, 744.25)
-shape = SubResource("RectangleShape2D_8474f")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="42" unique_id=1476866588]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1586906536]
-position = Vector2(528, -68)
-shape = SubResource("RectangleShape2D_sqlfn")
-one_way_collision = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="43" unique_id=347967964]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0" unique_id=586439884]
-position = Vector2(256, 588)
-shape = SubResource("RectangleShape2D_qfl2u")
-one_way_collision = true
-
 [node name="FireflyEnemy" parent="." index="41" unique_id=1441205242 instance=ExtResource("5_300rn")]
 position = Vector2(527, 29)
 
@@ -665,3 +644,36 @@ position = Vector2(322, 944)
 
 [node name="FireflyEnemy4" parent="." index="44" unique_id=225660482 instance=ExtResource("5_300rn")]
 position = Vector2(385, 946)
+
+[node name="Lava17" parent="." index="45" unique_id=2142128250 instance=ExtResource("3_rm1v0")]
+position = Vector2(1076, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava17" index="0" unique_id=899932050]
+position = Vector2(-28, 744.25)
+shape = SubResource("RectangleShape2D_8474f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="46" unique_id=1476866588]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1586906536]
+position = Vector2(528, -68)
+shape = SubResource("RectangleShape2D_sqlfn")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="47" unique_id=347967964]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0" unique_id=586439884]
+position = Vector2(256, 588)
+shape = SubResource("RectangleShape2D_qfl2u")
+one_way_collision = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="48" unique_id=1605730816]
+position = Vector2(-720, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0" unique_id=560578734]
+position = Vector2(48, 588)
+shape = SubResource("RectangleShape2D_4g860")
+one_way_collision = true
+
+[node name="Rocket" type="Sprite2D" parent="StaticBody2D3" index="1" unique_id=1194411018]
+position = Vector2(56, 531)
+texture = ExtResource("11_q5s3g")
