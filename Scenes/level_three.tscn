@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_nljgw"]
 [ext_resource type="PackedScene" uid="uid://bwpn2mv4q143x" path="res://Scenes/circle_path.tscn" id="6_xi0j2"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="7_nljgw"]
-[ext_resource type="Texture2D" uid="uid://11sd5rtjs1fc" path="res://Assets/sprites/ROCKET.png" id="11_q5s3g"]
+[ext_resource type="Texture2D" uid="uid://t5vdr6clut1v" path="res://Assets/sprites/RocketShip.png" id="12_5coyv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gejx0"]
 font_size = 10
@@ -675,5 +675,5 @@ shape = SubResource("RectangleShape2D_4g860")
 one_way_collision = true
 
 [node name="Rocket" type="Sprite2D" parent="StaticBody2D3" index="1" unique_id=1194411018]
-position = Vector2(56, 531)
-texture = ExtResource("11_q5s3g")
+position = Vector2(56, 532)
+texture = ExtResource("12_5coyv")

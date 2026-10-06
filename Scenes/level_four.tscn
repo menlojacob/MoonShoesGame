@@ -5,11 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://b8v3718a1l4g0" path="res://Assets/sprites/MountainTileSet.png" id="2_ko7jo"]
 [ext_resource type="PackedScene" uid="uid://n2ehclwjygdl" path="res://Scenes/dash_ability.tscn" id="2_vt7lo"]
 [ext_resource type="PackedScene" uid="uid://cctp8kk5qdco8" path="res://Scenes/ground_pound_ability.tscn" id="3_e27sj"]
+[ext_resource type="Texture2D" uid="uid://dsk2l7gx40yti" path="res://Assets/sprites/MoonBackground.png" id="3_jmoiw"]
 [ext_resource type="PackedScene" uid="uid://bwpn2mv4q143x" path="res://Scenes/circle_path.tscn" id="5_e27sj"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3xrma"]
 [ext_resource type="PackedScene" uid="uid://djgn5qodrihhl" path="res://Scenes/spiky_star_enemy.tscn" id="8_relrn"]
 [ext_resource type="PackedScene" uid="uid://ba8wuqb1lgp1c" path="res://Scenes/firefly_enemy.tscn" id="9_ko7jo"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="9_r1qxl"]
+[ext_resource type="Texture2D" uid="uid://1msgxn0odx0o" path="res://Assets/sprites/TheCobbler.png" id="11_e2sv8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2sv8"]
 texture = ExtResource("2_ko7jo")
@@ -157,6 +159,28 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e2sv8")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmoiw"]
+atlas = ExtResource("11_e2sv8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nespj"]
+atlas = ExtResource("11_e2sv8")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8kw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmoiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nespj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="Level" unique_id=624581394 instance=ExtResource("1_v8nbp")]
 
 [node name="Foreground" parent="." index="1" unique_id=1432229743]
@@ -166,6 +190,16 @@ tile_set = SubResource("TileSet_r1qxl")
 [node name="CollisionShape2D" parent="LevelComplete" parent_id_path=PackedInt32Array(270543521) index="0" unique_id=1143746891]
 position = Vector2(-5145, -2253)
 rotation = -3.1415927
+
+[node name="TextureRect" type="TextureRect" parent="Character/Camera2D2" parent_id_path=PackedInt32Array(1926023987) index="0" unique_id=1650803120]
+z_index = -10
+offset_left = -230.0
+offset_top = -130.0
+offset_right = 230.0
+offset_bottom = 129.0
+texture = ExtResource("3_jmoiw")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="DashAbility" parent="Character" parent_id_path=PackedInt32Array(1580066455) index="6" unique_id=1300372267 instance=ExtResource("2_vt7lo")]
 
@@ -589,3 +623,13 @@ offset_top = -558.0
 offset_right = -844.0
 offset_bottom = -535.0
 text = "Beware the spiky stars"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="11" unique_id=1513498232]
+position = Vector2(-5194, -2190)
+sprite_frames = SubResource("SpriteFrames_c8kw3")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.7784362
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" index="0" unique_id=1586609354]
