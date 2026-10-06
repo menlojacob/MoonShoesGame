@@ -66,6 +66,10 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("4_ejsiy")
 region = Rect2(64, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu2q0"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_owm7s"]
 atlas = ExtResource("1_ushfy")
 region = Rect2(32, 160, 32, 32)
@@ -194,6 +198,42 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("2_ejsiy")
 region = Rect2(32, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wop2g"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mup15"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hu16"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22jqy"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws7yy"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bow7x"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtnjs"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dssvl"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74vub"]
+atlas = ExtResource("1_ushfy")
+region = Rect2(32, 160, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bagv5"]
 atlas = ExtResource("1_ushfy")
 region = Rect2(96, 64, 32, 32)
@@ -278,6 +318,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ha0n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu2q0")
 }],
 "loop": 0,
 "name": &"dash",
@@ -406,6 +449,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wop2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mup15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hu16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22jqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws7yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bow7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtnjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dssvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74vub")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bagv5")
 }, {
 "duration": 1.0,
@@ -446,8 +521,10 @@ script = ExtResource("1_reotu")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2084453634]
 sprite_frames = SubResource("SpriteFrames_c8kw3")
-animation = &"groundpound_a"
+animation = &"respawn"
 autoplay = "idle"
+frame = 8
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" unique_id=1212945588]
 

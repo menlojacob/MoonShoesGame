@@ -59,6 +59,38 @@ region = Rect2(320, 0, 160, 160)
 atlas = ExtResource("3_i657n")
 region = Rect2(480, 0, 160, 160)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7if0"]
+atlas = ExtResource("3_i657n")
+region = Rect2(0, 480, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpec1"]
+atlas = ExtResource("3_i657n")
+region = Rect2(480, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_envfy"]
+atlas = ExtResource("3_i657n")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty032"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blori"]
+atlas = ExtResource("3_i657n")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwxfi"]
+atlas = ExtResource("3_i657n")
+region = Rect2(480, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdkeu"]
+atlas = ExtResource("3_i657n")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6x08"]
+atlas = ExtResource("3_i657n")
+region = Rect2(160, 160, 160, 160)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8kw3"]
 animations = [{
 "frames": [{
@@ -109,6 +141,35 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7if0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpec1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_envfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty032")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blori")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwxfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdkeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6x08")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 15.0
 }]
 
 [node name="FireflyEnemy" type="CharacterBody2D" unique_id=1673018747]
@@ -125,8 +186,10 @@ shape = SubResource("RectangleShape2D_4u3x4")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=304558962]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_c8kw3")
-animation = &"idle"
+animation = &"respawn"
 autoplay = "idle"
+frame = 7
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" unique_id=509622045]
 

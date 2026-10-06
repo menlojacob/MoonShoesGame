@@ -138,6 +138,10 @@ func respawn():
 	
 	character.global_position = GameManager.respawn_point
 	character.move_and_slide()
+	
+	sprite.play("respawn")
+	await sprite.animation_finished
+	
 	setAlive(true)
 	
 	get_tree().call_group("EnemyController","respawn")

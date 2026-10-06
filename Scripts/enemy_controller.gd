@@ -21,10 +21,10 @@ func _ready():
 	health = maxHealth #exported var only readable on _ready
 
 func respawn():
+	respawned.emit()
+	
 	alive = true
 	health = maxHealth #reset health to max
-	
-	respawned.emit()
 	
 	cancelRespawnTimer()
 	

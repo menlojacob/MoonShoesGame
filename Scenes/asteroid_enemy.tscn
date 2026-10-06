@@ -71,6 +71,38 @@ region = Rect2(64, 32, 32, 32)
 atlas = ExtResource("3_lec5p")
 region = Rect2(96, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqtkh"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi8xw"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnel0"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhnkx"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e5mb"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf2e5"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxev2"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6g1k"]
+atlas = ExtResource("3_lec5p")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c8kw3"]
 animations = [{
 "frames": [{
@@ -130,6 +162,35 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqtkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi8xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnel0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhnkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e5mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf2e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxev2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6g1k")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 12.0
 }]
 
 [node name="AsteroidEnemy" type="CharacterBody2D" unique_id=524003780]
@@ -146,7 +207,7 @@ maxHealth = 999
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1581293770]
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_c8kw3")
-animation = &"death"
+animation = &"respawn"
 autoplay = "idle"
 frame = 7
 frame_progress = 1.0

@@ -136,6 +136,58 @@ region = Rect2(64, 32, 32, 32)
 atlas = ExtResource("3_foqnp")
 region = Rect2(96, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewx12"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqob5"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kygma"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crhic"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mniew"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr64h"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iwxn"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvil7"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo7c4"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skm6e"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxhu2"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87dth"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbvgs"]
+atlas = ExtResource("3_foqnp")
+region = Rect2(0, 96, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cm3o"]
 animations = [{
 "frames": [{
@@ -248,6 +300,50 @@ animations = [{
 "loop": 1,
 "name": &"move",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewx12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqob5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kygma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crhic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mniew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr64h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iwxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvil7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo7c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skm6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxhu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87dth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbvgs")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 15.0
 }]
 
 [node name="StarEnemy" type="CharacterBody2D" unique_id=29101376]
@@ -263,8 +359,9 @@ spikyHelmet = true
 
 [node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_foqnp")]
 sprite_frames = SubResource("SpriteFrames_2cm3o")
-animation = &"move"
+animation = &"respawn"
 autoplay = "idle"
-frame_progress = 0.052353594
+frame = 12
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemySprite" unique_id=716743832]
