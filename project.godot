@@ -33,6 +33,7 @@ window/stretch/aspect="expand"
 
 EnemyCollision="Collision shapes part of this group will be considered for enemy collision"
 EnemyController=""
+Lava="Is the lava layer"
 
 [input]
 

@@ -31,6 +31,12 @@ signal touchedEnemy
 signal jumpedOnEnemy
 signal died
 
+func _ready():
+	collisionArea.body_entered.connect(func(body): 
+		if body.is_in_group("Lava"):
+			respawn()
+	)
+
 func jump(height = JUMP_HEIGHT, variableHeight = true):
 	#calculate force needed to reach height
 	var gravity = (character.get_gravity().y * gravityModifier)
@@ -138,6 +144,9 @@ func respawn():
 	
 	await sprite.animation_finished
 	
+	#respawn all enemies
+	get_tree().call_group("EnemyController","respawn", true)
+	
 	character.global_position = GameManager.respawn_point
 	character.move_and_slide()
 	
@@ -145,8 +154,6 @@ func respawn():
 	await sprite.animation_finished
 	
 	setAlive(true)
-	
-	get_tree().call_group("EnemyController","respawn")
 
 func setAlive(isAlive : bool):
 	alive = isAlive

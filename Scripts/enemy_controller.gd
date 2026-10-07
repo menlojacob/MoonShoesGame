@@ -20,8 +20,9 @@ signal respawned
 func _ready():
 	health = maxHealth #exported var only readable on _ready
 
-func respawn():
-	respawned.emit()
+func respawn(forcedRespawn : bool):
+	print("respawned")
+	respawned.emit(forcedRespawn)
 	
 	alive = true
 	health = maxHealth #reset health to max
@@ -43,7 +44,7 @@ func jumped_on():
 		
 		respawnTimer = get_tree().create_timer(5)
 		respawnCallable = func():
-			respawn()	
+			respawn(false)	
 		respawnTimer.timeout.connect(respawnCallable)
 	else:
 		on_jumped_on.emit()
