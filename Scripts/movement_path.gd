@@ -24,7 +24,7 @@ func _ready():
 		)
 	
 	#connect to respawned signal
-	enemyController.respawned.connect(func():
+	enemyController.respawned.connect(func(_forcedRespawn):
 		startMovement()
 	)
 	

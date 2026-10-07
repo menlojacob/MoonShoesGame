@@ -21,7 +21,6 @@ func _ready():
 	health = maxHealth #exported var only readable on _ready
 
 func respawn(forcedRespawn : bool):
-	print("respawned")
 	respawned.emit(forcedRespawn)
 	
 	alive = true

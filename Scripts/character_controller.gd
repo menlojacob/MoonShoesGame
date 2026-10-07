@@ -136,6 +136,8 @@ func _physics_process(delta: float) -> void:
 	
 	if alive:
 		character.move_and_slide()
+	else:
+		character.velocity = Vector2.ZERO	
 
 func respawn():
 	setAlive(false)
