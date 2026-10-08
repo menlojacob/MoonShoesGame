@@ -297,7 +297,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_osjoj")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"move",
 "speed": 10.0
 }, {
@@ -359,9 +359,7 @@ spikyHelmet = true
 
 [node name="EnemySprite" parent="." unique_id=509586205 instance=ExtResource("2_foqnp")]
 sprite_frames = SubResource("SpriteFrames_2cm3o")
-animation = &"respawn"
+animation = &"move"
 autoplay = "idle"
-frame = 12
-frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemySprite" unique_id=716743832]

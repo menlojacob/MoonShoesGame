@@ -16,6 +16,10 @@ layout_mode = 2
 text = "Version Notes:
 Sprint 6
 - Added level 4
+- added cobbler and rocket ship
+ - added respawn animations for character and enemies
+ - added custom backgrounds for each level
+ - used tile sets to polish up levels
 Sprint 5
 - Added level 2 and 3, unlocked after you beat the previous level
 - Added abilities dash and ground pound, unlocked in level 2 and

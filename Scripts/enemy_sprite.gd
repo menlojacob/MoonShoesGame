@@ -19,6 +19,14 @@ func playDeathAnimation():
 	await self.animation_finished
 	self.visible = false
 	
-func onRespawn():
+func onRespawn(forcedRespawn : bool):
 	self.visible = true
+	
+	#if(!enemyController.is_alive() || enemy.get_node_or_null("MovementPath") != null || (enemy.get_node_or_null("CirclePath") != null)):
+		#self.play("respawn")
+		#await self.animation_finished
+		
+	if(not forcedRespawn):
+		self.play("respawn")
+		await self.animation_finished
 	self.play("idle")

@@ -822,3 +822,6 @@ offset_top = -138.0
 offset_right = 1420.0
 offset_bottom = -115.0
 text = "Stars are very spiky!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12" unique_id=160791223]
+autoplay = true

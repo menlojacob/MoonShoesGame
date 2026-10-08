@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://rsbnjs6p6dvw"
 
 Music="*uid://cw0680mse44e8"
 GameManager="*uid://nmree8uj3s70"
+MusicManager="*uid://klqktsr2spx7"
 
 [display]
 
@@ -33,6 +34,7 @@ window/stretch/aspect="expand"
 
 EnemyCollision="Collision shapes part of this group will be considered for enemy collision"
 EnemyController=""
+Lava="Is the lava layer"
 
 [input]
 
