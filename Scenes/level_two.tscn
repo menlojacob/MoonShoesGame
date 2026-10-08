@@ -591,6 +591,9 @@ position = Vector2(2348, -1583)
 [node name="FireflyEnemy27" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="69" unique_id=824902347 instance=ExtResource("3_hwt33")]
 position = Vector2(2597, -1341)
 
+[node name="FireflyEnemy40" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="70" unique_id=888460558 instance=ExtResource("3_hwt33")]
+position = Vector2(2595, -1192)
+
 [node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(894202242) index="0" unique_id=243793481 instance=ExtResource("4_7ycwu")]
 position = Vector2(151, -68)
 
@@ -637,15 +640,12 @@ offset_right = 40.0
 offset_bottom = -24.0
 text = "Shift to dash"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10" unique_id=160791223]
-autoplay = true
-
-[node name="Label2" type="Label" parent="." index="11" unique_id=2109112]
+[node name="Label2" type="Label" parent="." index="10" unique_id=2109112]
 offset_left = 1265.0
 offset_top = -138.0
 offset_right = 1420.0
 offset_bottom = -115.0
 text = "Stars are very spiky!"
 
-[node name="FireflyEnemy" parent="." index="12" unique_id=888460558 instance=ExtResource("3_hwt33")]
-position = Vector2(2595, -1192)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="11" unique_id=160791223]
+autoplay = true
