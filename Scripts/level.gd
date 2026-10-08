@@ -1,5 +1,6 @@
 extends Node2D
 @export var completion_flag: String
+@export var nextScene = "cutscene.tscn"
 @onready var player: CharacterBody2D = $Character
 
 # Called when the node enters the scene tree for the first time.
@@ -19,4 +20,4 @@ func _process(_delta: float) -> void:
 func _on_level_complete_body_entered(_body: Node2D) -> void:
 	GameManager.set(completion_flag, true)
 	print("hello")
-	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/" + nextScene)

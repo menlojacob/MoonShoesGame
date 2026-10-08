@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cxx5b1j7c1yht"]
+
+[ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_x56mm"]
+[ext_resource type="Texture2D" uid="uid://bxvbw7h7ckbei" path="res://Assets/sprites/cutscene7.png" id="2_3ofap"]
+
+[node name="Cutscene" unique_id=352676900 instance=ExtResource("1_x56mm")]
+nextScene = "cutscene_5_3.tscn"
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_3ofap")
+
+[node name="Label" parent="." index="3" unique_id=1128421793]
+text = "\"EEEEEEEYYAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!\""

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ywi6c1qr23qk"]
+
+[ext_resource type="Texture2D" uid="uid://b6rd6n7lumrkd" path="res://Assets/sprites/cutsceneplaceholder.png" id="1_7n648"]
+[ext_resource type="Script" uid="uid://3wtq013elbmy" path="res://Scripts/cutscene.gd" id="1_vlwh7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vlwh7"]
+
+[node name="Cutscene" type="Node2D" unique_id=352676900]
+script = ExtResource("1_vlwh7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1312745525]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -579.0
+offset_top = -326.0
+offset_right = 579.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cutsceneplaceholder" type="Sprite2D" parent="." unique_id=1452003199]
+position = Vector2(-8, -9)
+texture = ExtResource("1_7n648")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1361983435]
+
+[node name="Label" type="Label" parent="." unique_id=1128421793]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -545.0
+offset_top = 185.0
+offset_right = 545.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Little Crispin"
+label_settings = SubResource("LabelSettings_vlwh7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Label" unique_id=2122325432]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5411765)
+
+[node name="Label2" type="Label" parent="." unique_id=450450178]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = -314.0
+offset_right = 563.0
+offset_bottom = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SPACE to continue"
+label_settings = SubResource("LabelSettings_vlwh7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Label2" unique_id=862043342]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5411765)
