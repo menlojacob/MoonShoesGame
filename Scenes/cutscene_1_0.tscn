@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ck41la7i8axa1"]
+
+[ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_2nj7u"]
+[ext_resource type="Texture2D" uid="uid://dnmosnvdleg7s" path="res://Assets/sprites/cutscene0.png" id="2_x3r5e"]
+
+[node name="Cutscene" unique_id=352676900 instance=ExtResource("1_2nj7u")]
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_x3r5e")
+
+[node name="Label" parent="." index="3" unique_id=1128421793]
+text = "Little Crispin was walking along when he suddenly noticed that a pair of Moon Shoes were stuck to his feet. 
+Without looking back, our hero set off to find the Cobbler on the Moon, the only one who could help with this predicament."

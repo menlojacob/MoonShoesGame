@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5helo6jpv4ge"]
+
+[ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_j28so"]
+[ext_resource type="Texture2D" uid="uid://bdoy4wcflgg7u" path="res://Assets/sprites/cutscene5.png" id="2_r54gk"]
+
+[node name="Cutscene" unique_id=352676900 instance=ExtResource("1_j28so")]
+nextScene = "cutscene_5_1.tscn"
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_r54gk")
+
+[node name="Label" parent="." index="3" unique_id=1128421793]
+text = "Crispin saw him. The Cobbler on the Moon.
+He cautiously approached."

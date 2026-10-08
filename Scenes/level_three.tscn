@@ -350,6 +350,7 @@ size = Vector2(672, 8)
 
 [node name="Level2" unique_id=624581394 instance=ExtResource("1_d0q0h")]
 completion_flag = "level_three_beat"
+nextScene = "cutscene_4_0.tscn"
 
 [node name="Label" type="Label" parent="." index="0" unique_id=1216594632]
 offset_left = 417.0
