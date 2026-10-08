@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bwpn2mv4q143x" path="res://Scenes/circle_path.tscn" id="6_xi0j2"]
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="7_nljgw"]
 [ext_resource type="Texture2D" uid="uid://t5vdr6clut1v" path="res://Assets/sprites/RocketShip.png" id="12_5coyv"]
+[ext_resource type="AudioStream" uid="uid://bx7rk7wjlkd2c" path="res://Assets/music/volcano_v3.mp3" id="13_0hrgb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gejx0"]
 font_size = 10
@@ -590,3 +591,8 @@ one_way_collision = true
 [node name="Rocket" type="Sprite2D" parent="StaticBody2D3" index="1" unique_id=1194411018]
 position = Vector2(56, 532)
 texture = ExtResource("12_5coyv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="14" unique_id=1624441952]
+stream = ExtResource("13_0hrgb")
+autoplay = true
+parameters/looping = true

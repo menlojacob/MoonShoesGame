@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dj74h62jkr5ap" path="res://Scenes/platform.tscn" id="5_tgw3l"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="6_3lrk7"]
 [ext_resource type="PackedScene" uid="uid://cjy1fsl1khu4l" path="res://Scenes/killzone.tscn" id="8_ys0qe"]
+[ext_resource type="AudioStream" uid="uid://b7amk2vksobjw" path="res://Assets/music/IntroTutorial_Stage.mp3" id="10_ep8vc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lrk7"]
 texture = ExtResource("2_gni6d")
@@ -3121,3 +3122,8 @@ position = Vector2(1617, -251)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform3" index="2" unique_id=1725852016]
 libraries/ = SubResource("AnimationLibrary_ys0qe")
 autoplay = &"movement"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=711279845]
+stream = ExtResource("10_ep8vc")
+autoplay = true
+parameters/looping = true

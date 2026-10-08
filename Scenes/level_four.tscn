@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://df3yg3rpgnlna" path="res://Scenes/checkpoint.tscn" id="9_r1qxl"]
 [ext_resource type="Texture2D" uid="uid://1msgxn0odx0o" path="res://Assets/sprites/TheCobbler.png" id="11_e2sv8"]
 [ext_resource type="PackedScene" uid="uid://cjy1fsl1khu4l" path="res://Scenes/killzone.tscn" id="12_nespj"]
+[ext_resource type="AudioStream" uid="uid://b776seece3fd0" path="res://Assets/music/MOON_v1.mp3" id="14_1gte4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2sv8"]
 texture = ExtResource("2_ko7jo")
@@ -666,3 +667,8 @@ frame = 1
 frame_progress = 0.7784362
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" index="0" unique_id=1586609354]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12" unique_id=910027798]
+stream = ExtResource("14_1gte4")
+autoplay = true
+parameters/looping = true

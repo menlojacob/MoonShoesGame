@@ -14,6 +14,6 @@ dest_files=["res://.godot/imported/volcano.mp3-7eca8aa10e4de2de8a278740b35bdf49.
 
 loop=true
 loop_offset=2.4
-bpm=0.0
-beat_count=0
+bpm=120.0
+beat_count=82
 bar_beats=4
