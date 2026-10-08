@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dwuatn56ahp4i"]
+
+[ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_x1prh"]
+[ext_resource type="Texture2D" uid="uid://c5bmw6mfeku6r" path="res://Assets/sprites/cutscene6.png" id="2_lmjnp"]
+
+[node name="Cutscene" unique_id=352676900 instance=ExtResource("1_x1prh")]
+nextScene = "cutscene_5_2.tscn"
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_lmjnp")
+
+[node name="Label" parent="." index="3" unique_id=1128421793]
+text = "\"Please, Cobbler,\" Crispin begged. \"I have travelled far and overcome many challenges to reach you.\"
+\"Please remove my Moon Shoes.\""

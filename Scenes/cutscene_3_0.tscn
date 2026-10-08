@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://cl56mrf2mjven"]
 
 [ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_7bhf2"]
+[ext_resource type="Texture2D" uid="uid://dcija852gscu6" path="res://Assets/sprites/cutscene2.png" id="2_j3bai"]
 
 [node name="Cutscene" unique_id=352676900 instance=ExtResource("1_7bhf2")]
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_j3bai")
 
 [node name="Label" parent="." index="3" unique_id=1128421793]
 text = "Seeing no other way forward, Crispin descended into the bowels of the volcano.

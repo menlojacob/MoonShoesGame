@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://bgyracbjydv32"]
 
 [ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_chhnf"]
+[ext_resource type="Texture2D" uid="uid://hq2lqvlv2w53" path="res://Assets/sprites/cutscene3.png" id="2_mftvm"]
 
 [node name="Cutscene" unique_id=352676900 instance=ExtResource("1_chhnf")]
+nextScene = "cutscene_4_1.tscn"
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_mftvm")
 
 [node name="Label" parent="." index="3" unique_id=1128421793]
 text = "Crispin entered the rocket ship.

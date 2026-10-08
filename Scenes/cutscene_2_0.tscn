@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://c2sqelpabin2x"]
 
 [ext_resource type="PackedScene" uid="uid://ywi6c1qr23qk" path="res://Scenes/cutscene.tscn" id="1_0n4iw"]
+[ext_resource type="Texture2D" uid="uid://qtn5w2b0mrb3" path="res://Assets/sprites/cutscene1.png" id="2_yqwl6"]
 
 [node name="Cutscene" unique_id=352676900 instance=ExtResource("1_0n4iw")]
+
+[node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
+position = Vector2(0, 0)
+texture = ExtResource("2_yqwl6")
 
 [node name="Label" parent="." index="3" unique_id=1128421793]
 text = "Leaping between rooftops, Crispin suddenly found himself at the base of a great mountain.
