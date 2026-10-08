@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://u82dx3b2oxku" path="res://Assets/sprites/MountainBackground.png" id="4_gejx0"]
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="4_ye0dk"]
 [ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="5_ye0dk"]
+[ext_resource type="AudioStream" uid="uid://c2ll4b6ud5q2l" path="res://Assets/music/MOUNTAIN_ROMP_FINAL_V2.mp3" id="8_t1jg6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emxoy"]
 texture = ExtResource("2_ibwme")
@@ -637,6 +638,7 @@ offset_right = 40.0
 offset_bottom = -24.0
 text = "Shift to dash"
 
+<<<<<<< Updated upstream
 [node name="Label2" type="Label" parent="." index="10" unique_id=2109112]
 offset_left = 1265.0
 offset_top = -138.0
@@ -646,3 +648,9 @@ text = "Stars are very spiky!"
 
 [node name="FireflyEnemy" parent="." index="11" unique_id=888460558 instance=ExtResource("3_hwt33")]
 position = Vector2(2595, -1192)
+=======
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10" unique_id=160791223]
+stream = ExtResource("8_t1jg6")
+autoplay = true
+parameters/looping = true
+>>>>>>> Stashed changes
