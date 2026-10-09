@@ -12,5 +12,5 @@ texture = ExtResource("2_mftvm")
 
 [node name="Label" parent="." index="3" unique_id=1128421793]
 text = "Crispin entered the rocket ship.
-Its thrusters roared to life as the craft began to take off.
-This is it."
+
+Its thrusters roared to life as the craft began to take off."
