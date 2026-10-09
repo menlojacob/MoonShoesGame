@@ -475,13 +475,13 @@ position = Vector2(149, -9)
 position = Vector2(222, -87)
 
 [node name="FireflyEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="22" unique_id=1924449323 instance=ExtResource("3_hwt33")]
-position = Vector2(265, -163)
+position = Vector2(268, -149)
 
 [node name="FireflyEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="23" unique_id=1704862701 instance=ExtResource("3_hwt33")]
-position = Vector2(313, -228)
+position = Vector2(318, -201)
 
 [node name="FireflyEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="24" unique_id=730977694 instance=ExtResource("3_hwt33")]
-position = Vector2(373, -277)
+position = Vector2(373, -248)
 
 [node name="FireflyEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="25" unique_id=471815552 instance=ExtResource("3_hwt33")]
 position = Vector2(513, -302)
@@ -543,13 +543,13 @@ position = Vector2(985, 56)
 position = Vector2(1188, 56)
 
 [node name="StarEnemy" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="34" unique_id=29101376 instance=ExtResource("5_ye0dk")]
-position = Vector2(1394, -75)
+position = Vector2(1392, -84)
 
 [node name="StarEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="35" unique_id=1079040917 instance=ExtResource("5_ye0dk")]
-position = Vector2(1442, -127)
+position = Vector2(1439, -139)
 
 [node name="StarEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="36" unique_id=1576582390 instance=ExtResource("5_ye0dk")]
-position = Vector2(1400, -177)
+position = Vector2(1399, -191)
 
 [node name="StarEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(270758329) index="37" unique_id=542699215 instance=ExtResource("5_ye0dk")]
 position = Vector2(1815, -240)
