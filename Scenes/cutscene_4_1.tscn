@@ -8,3 +8,6 @@
 [node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
 position = Vector2(0, 0)
 texture = ExtResource("2_jjm7s")
+
+[node name="Label" parent="." index="3" unique_id=1128421793]
+text = "This is it."
