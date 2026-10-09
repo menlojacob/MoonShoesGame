@@ -6,6 +6,9 @@
 [node name="Cutscene" unique_id=352676900 instance=ExtResource("1_p0nj3")]
 nextScene = "title_screen.tscn"
 
+[node name="Background" parent="." index="0" unique_id=1312745525]
+z_index = -1
+
 [node name="Cutsceneplaceholder" parent="." index="1" unique_id=1452003199]
 position = Vector2(0, 0)
 texture = ExtResource("2_ifh3q")
