@@ -829,3 +829,6 @@ text = "Stars are very spiky!"
 stream = ExtResource("12_ahq5a")
 autoplay = true
 parameters/looping = true
+
+[node name="Music" parent="." index="13" unique_id=1671154459]
+stream = ExtResource("12_ahq5a")

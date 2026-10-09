@@ -673,3 +673,6 @@ frame_progress = 0.7784362
 stream = ExtResource("14_1gte4")
 autoplay = true
 parameters/looping = true
+
+[node name="Music" parent="." index="13" unique_id=1671154459]
+stream = ExtResource("14_1gte4")

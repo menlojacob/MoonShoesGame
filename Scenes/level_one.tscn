@@ -3128,3 +3128,6 @@ autoplay = &"movement"
 stream = ExtResource("10_ep8vc")
 autoplay = true
 parameters/looping = true
+
+[node name="Music" parent="." index="10" unique_id=1671154459]
+stream = ExtResource("10_ep8vc")
