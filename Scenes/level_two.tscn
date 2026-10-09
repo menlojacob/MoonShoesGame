@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://kqmxsi4n3kwa" path="res://Scenes/movement_path.tscn" id="4_ye0dk"]
 [ext_resource type="PackedScene" uid="uid://d3dtsdd3x4wyp" path="res://Scenes/star_enemy.tscn" id="5_ye0dk"]
 [ext_resource type="PackedScene" uid="uid://cjy1fsl1khu4l" path="res://Scenes/killzone.tscn" id="10_lamej"]
+[ext_resource type="AudioStream" uid="uid://b7amk2vksobjw" path="res://Assets/music/IntroTutorial_Stage.mp3" id="12_ahq5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emxoy"]
 texture = ExtResource("2_ibwme")
@@ -824,5 +825,5 @@ offset_right = 1420.0
 offset_bottom = -115.0
 text = "Stars are very spiky!"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12" unique_id=160791223]
-autoplay = true
+[node name="Music" parent="." index="12" unique_id=1671154459]
+stream = ExtResource("12_ahq5a")

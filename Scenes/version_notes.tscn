@@ -59,6 +59,7 @@ text = "back"
 z_index = -1
 offset_right = 1150.0
 offset_bottom = 764.0
+mouse_filter = 2
 texture = ExtResource("2_0ylr1")
 expand_mode = 1
 stretch_mode = 4

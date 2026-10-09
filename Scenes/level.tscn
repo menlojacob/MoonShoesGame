@@ -44,5 +44,8 @@ shape = SubResource("WorldBoundaryShape2D_fjak3")
 
 [node name="Platforms" type="Node" parent="." unique_id=879586082]
 
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1671154459]
+autoplay = true
+
 [connection signal="area_entered" from="LevelComplete" to="." method="_on_level_complete_body_entered"]
 [connection signal="body_entered" from="LevelComplete" to="." method="_on_level_complete_body_entered"]
